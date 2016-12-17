@@ -1,2 +1,2 @@
 # ssa17
-Web stranica za EESTEC projekat Soft Skills Academy 2017.
+Web stranica za EESTEC projekat Soft Skills Academy Sarajevo '17.
