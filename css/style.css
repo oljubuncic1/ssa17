@@ -1,0 +1,137 @@
+.marginContainer {
+    margin: 10px 10% 10px 10%;
+}
+
+.newsHeadline {
+    font-size: 40px;
+    color: #1aa79e;
+    text-transform: uppercase;
+    border-bottom: 10px #1aa79e solid;
+}
+
+.mainNewsDiv {
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px grey;
+    padding: 0px 0px 10px 0px;
+    margin: 10px;
+}
+
+.newsImg {
+    max-height: 40%;
+}
+
+.newsMainDate {
+    text-transform: uppercase;
+    position: absolute;
+    background-color: #1aa79e;
+    font-size: 40px;
+    width: 120px;
+    height: 120px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    top: 62%;
+    left: 40px;
+}
+
+.newsDayMargin {
+    margin-bottom: -10px;
+}
+
+.newsArticleHeader {
+    font-size: 30px;
+    color: #333131;
+    padding-left: 180px;
+}
+
+.newsArticleText {
+    font-size: 20px;
+    color: grey;
+    padding-left: 5%;
+}
+
+.newsMoreDiv {
+    margin: 10px 10% 10px 10%;
+    text-align: right;
+}
+
+.newsMoreText {
+    color: #1aa79e;
+    font-size: 30px;
+    text-decoration: none!important;
+}
+
+.aboutProjectHeadline {
+    font-size: 40px;
+    color: #1aa699;
+    text-transform: uppercase;
+    border-bottom: 10px #1aa699 solid;
+}
+
+.aboutProjectRowMargin {
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.aboutProjectImg {
+    width: 100%;
+    border: 12px solid grey;
+    margin-top: 20px;
+}
+
+.marginRight30 {
+    margin-right: 30px;
+}
+
+.marginLeft30 {
+    margin-left: 30px;
+}
+
+.justifyText {
+    text-align: justify;
+}
+
+.aboutProjectTextHeader {
+    font-size: 45px;
+    color: grey;
+}
+
+.aboutProjectTextTop {
+    font-size: 26px;
+    color: grey;
+}
+
+.aboutProjectTextBottom {
+    font-size: 26px;
+    color: grey;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .marginContainer {
+        margin: 10px 3% 10px 3%;
+    }
+    .newsMainDate {
+        font-size: 20px;
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+        top: 28%;
+        left: 20px;
+    }
+    .newsArticleHeader {
+        font-size: 16px;
+        padding-left: 100px;
+    }
+    .newsArticleText {
+        font-size: 14px;
+        padding-left: 2%;
+    }
+    .newsMoreDiv {
+        margin: 10px 5% 10px 5%;
+    }
+    .newsMoreText {
+        font-size: 20px;
+    }
+}

@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	  <meta charset="utf-8">
-	  <title>Soft Skills Academy Sarajevo '17</title>
 
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-	   </script>
+<head>
+    <meta charset="utf-8">
+    <title>Soft Skills Academy Sarajevo '17</title>
 
-	   <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
-	   <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
-	   <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
 
-	   <script src="bootstrap/js/bootstrap.min.js"></script>
-       <script src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 
-   </head>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
 
-   <body>
+</head>
 
+<body>
 
+    <div id="includeNovosti"></div>
+    <div id="includeOProjektu"></div>
+</body>
+<script>
+    $(function() {
+        $("#includeNovosti").load("novosti.html");
+        $("#includeOProjektu").load("oProjektu.html");
+    });
+</script>
 
-   </body>
 </html>
