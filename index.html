@@ -16,17 +16,59 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
 
+    
 </head>
 
 <body>
+    <div id="includeMainNavbar"></div>
+    <div id="includeTitle"></div>
+    <div id="includeSecondNavbar">
+     <nav class="navbar navbar-default secondNavbar" data-spy="affix" data-offset-top="658">
+  <div class="container-fluid">
+    <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#secondNavbarCollapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+                <div class="collapse navbar-collapse" id="secondNavbarCollapse" >
+                    <ul class=" navbar-nav nav secondNavbarList">
 
+
+                        <li><a href="#">Novosti</a></li>
+                        <li><a href="#">O nama</a></li>
+                        <li><a href="#"> O projektu</a></li>
+                        <li><a href="#">Radionice</a></li>
+
+
+                    </ul>
+                </div>
+
+
+              </div>
+            </div>
+    
+  </div>
+</nav></div>
     <div id="includeNovosti"></div>
     <div id="includeOProjektu"></div>
+    
 </body>
 <script>
     $(function() {
+
+        $('#includeMainNavbar').load('mainNavbar.html');
+        $("#includeTitle").load("title.html");
+        //$("#includeSecondNavbar").load("secondNavbar.html");
         $("#includeNovosti").load("novosti.html");
         $("#includeOProjektu").load("oProjektu.html");
+
+
     });
 </script>
 
