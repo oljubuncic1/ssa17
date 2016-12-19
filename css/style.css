@@ -4,15 +4,24 @@ body {
   margin: 0px !important;
   padding: 0px !important;
 }
+/*@font-face {
+    font-family: 'GothamBlack';
+    src: url('fonts/Gotham-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
 .marginContainer {
     margin: 10px 10% 10px 10%;
 }
 
-.newsHeadline {
+.sectionHeadline {
+    font-family: Verdana, sans-serif;
     font-size: 40px;
-    color: #1aa79e;
+    font-weight: bold;
+    color: #1aa699;
     text-transform: uppercase;
-    border-bottom: 10px #1aa79e solid;
+    border-bottom: 10px #1aa699 solid;
 }
 
 .mainNewsDiv {
@@ -36,29 +45,37 @@ body {
     height: 120px;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 2px;
     top: 62%;
     left: 40px;
+    font-family: 'Merriweather', serif;
 }
 
 .newsDayMargin {
     margin-bottom: -10px;
+    font-size: 49px;
+}
+
+.newsMonth {
+    font-size: 24px;
 }
 
 .newsArticleHeader {
-    font-size: 30px;
+    font-family: 'Merriweather', serif;
+    font-size: 23px;
     color: #333131;
     padding-left: 180px;
 }
 
 .newsArticleText {
-    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
     color: grey;
     padding-left: 5%;
 }
 
 .newsMoreDiv {
-    margin: 10px 10% 10px 10%;
+    margin: 10px 0% 10px 10%;
     text-align: right;
 }
 
@@ -66,13 +83,6 @@ body {
     color: #1aa79e;
     font-size: 30px;
     text-decoration: none!important;
-}
-
-.aboutProjectHeadline {
-    font-size: 40px;
-    color: #1aa699;
-    text-transform: uppercase;
-    border-bottom: 10px #1aa699 solid;
 }
 
 .aboutProjectRowMargin {
@@ -87,43 +97,55 @@ body {
 }
 
 .marginRight30 {
-    margin-right: 30px;
+    margin-right: 40px;
+    display: block;
+    margin: auto;
 }
 
 .marginLeft30 {
-    margin-left: 30px;
+    margin-left: 40px;
+    display: block;
+    margin: auto;
 }
 
 .justifyText {
     text-align: justify;
+    margin-top: 10px;
 }
 
 .aboutProjectTextHeader {
-    font-size: 45px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 31px;
     color: grey;
 }
 
 .aboutProjectTextTop {
-    font-size: 26px;
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
     color: grey;
 }
 
 .aboutProjectTextBottom {
-    font-size: 26px;
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
     color: grey;
     margin-top: 30px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .marginContainer {
         margin: 10px 3% 10px 3%;
+    }
+    .sectionHeadline {
+        font-size: 30px;
+        border-bottom: 8px #1aa699 solid;
     }
     .newsMainDate {
         font-size: 20px;
         width: 60px;
         height: 60px;
         padding: 5px;
-        top: 28%;
+        top: 45%;
         left: 20px;
     }
     .newsArticleHeader {
@@ -135,10 +157,20 @@ body {
         padding-left: 2%;
     }
     .newsMoreDiv {
-        margin: 10px 5% 10px 5%;
+        margin: 10px 0% 10px 5%;
     }
     .newsMoreText {
-        font-size: 20px;
+        font-size: 18px;
+    }
+    .aboutProjectTextHeader {
+        font-size: 28px;
+    }
+    .aboutProjectTextTop {
+        font-size: 18px;
+    }
+    .aboutProjectTextBottom {
+        font-size: 18px;
+        margin-top: 15px;
     }
 }
 
