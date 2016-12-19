@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
-body {
+body, html{
   margin: 0px !important;
   padding: 0px !important;
 }
@@ -12,16 +13,17 @@ body {
 }*/
 
 .marginContainer {
-    margin: 10px 10% 10px 10%;
+    margin: 10px 5% 10px 5%;
 }
 
 .sectionHeadline {
     font-family: Verdana, sans-serif;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
     color: #1aa699;
     text-transform: uppercase;
-    border-bottom: 10px #1aa699 solid;
+    border-bottom: 10px #1aa79e solid;
+    margin-bottom: 100px;
 }
 
 .mainNewsDiv {
@@ -434,6 +436,46 @@ body {
 .affix .secondNavbarList li
 {
     margin-top: 12px;
+}
+
+.image
+{
+    margin: 0 auto !important;
+}
+
+.onama-title-text
+{
+    font-family: Merriaweather;
+    font-size: 14pt;
+    text-align: center;
+    color: rgb(50,50,50);
+
+
+}
+
+.onama-paragraph-text
+{
+    font-family: Roboto;
+    font-size: 12pt;
+    margin-top: 20px;
+    text-align: justify;
+    color: rgb(100, 100, 100);
+    
+}
+
+.timelineBackground
+{
+    background-color: rgb(237,237, 237);
+    margin: 0 auto !important;
+    padding: 0;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.timelineImage
+{
+    margin: 0 auto !important;
+    padding: 0;
 }
 
 
