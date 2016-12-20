@@ -478,6 +478,85 @@ body, html{
     padding: 0;
 }
 
+.footer
+{
+    background-color: rgb(50,50,50);
+    margin-top: 100px;
+}
+
+@media only screen and (min-width: 1000px) {
+
+.socialMedia
+{
+    margin-left: 40px;
+
+}
+
+
+}
+
+.socialMedia
+{
+    margin-bottom: 120px;
+}
+
+.socialWrapper
+{
+    margin: auto !important;
+}
+
+.socialImage
+{
+    width: 50px;
+    
+    display:inline-block;
+    
+}
+.footerNaslov
+{
+    border-bottom: 1px solid white;
+    margin-bottom: 5%;
+    
+    
+}
+
+.footerNaslov > p
+{
+    text-transform: uppercase;
+    color: white;
+    font-family: sans-serif;
+    font-size: 14pt;
+    
+    
+}
+
+.kontaktIme, .kontaktPozicija
+{
+    color: white;
+    font-family: sans-serif;
+}
+
+.kontaktIme
+{
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.kontaktPozicija
+{
+    font-size: 10pt;
+}
+
+.prvaKontakt
+{
+    margin-bottom: 60px;
+}
+
+
+.socialWrapper a:hover
+{
+    cursor: pointer;
+}
 
 
 
