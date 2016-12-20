@@ -533,13 +533,23 @@ body, html{
 .kontaktIme, .kontaktPozicija
 {
     color: white;
-    font-family: sans-serif;
+    font-family: Roboto;
 }
 
-.kontaktIme
+.kontaktIme, .subFooter-wrapper > p
 {
     font-weight: bold;
-    font-size: 14pt;
+    font-size: 12pt;
+}
+
+.subFooter-wrapper > p
+{
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
 }
 
 .kontaktPozicija
@@ -556,6 +566,11 @@ body, html{
 .socialWrapper a:hover
 {
     cursor: pointer;
+}
+
+.subFooter
+{
+    background-color: rgb(20,20,20);
 }
 
 
