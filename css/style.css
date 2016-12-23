@@ -5,12 +5,20 @@ body, html{
   margin: 0px !important;
   padding: 0px !important;
 }
-/*@font-face {
-    font-family: 'GothamBlack';
+@font-face {
+    font-family: 'Gotham-Black';
     src: url('fonts/Gotham-Black.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}*/
+}
+
+
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url('fonts/Gotham-Light.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .marginContainer {
     margin: 10px 5% 10px 5%;
@@ -178,12 +186,13 @@ body, html{
 
 .mainNavbar
 {
-    background-color: #1AA79E !important;
+    background-color: transparent !important;
     border-radius: 0px !important;
     background: #1AA79E;
     border: 0px;
     margin-bottom: 0px;
-    height: 15%;
+    height: 100px;
+    box-shadow: none !important;
 }
 
 
@@ -209,7 +218,11 @@ body, html{
     border-radius: 0px !important;
     border: 0px;
     margin-bottom: 0px;
-    height: 10% !important;
+    height: 95px !important;
+    box-shadow: none !important;
+    padding-bottom: 0px !important;
+    border-bottom: 1px solid rgb(200,200,200);
+    
     
     
 }
@@ -229,17 +242,35 @@ body, html{
 
 .logo-img
 {
-    width: 140px !important;
-    margin-left: 20%;
+    width: 160px !important;
+    margin-left: 30%;
+}
+
+.second-logo-img
+{
+    width: 130px !important;
+    margin-left: 33%;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+
 }
 
 @media only screen and (max-width: 400px) {
 
 .logo-img
 {
-    width: 100px !important;
+    width: 120px !important;
     margin-left: 5%;
 }
+
+.second-logo-img
+{
+    width: 95px !important;
+    margin-left: 5%;
+    
+}
+
+
 
 .mainNavbar .navbar-toggle
 {
@@ -258,7 +289,7 @@ body, html{
 
 .affix-top .navbar-toggle
 {
-    margin-top: -35px;
+    margin-top: 30px;
     width: 30px;
     height: 35px;
     padding-top: 10px;
@@ -272,7 +303,7 @@ body, html{
 
 .affix .navbar-toggle
 {
-    margin-top: 10px;
+    margin-top: 30px;
     width: 30px;
     height: 35px;
     padding-top: 10px;
@@ -284,7 +315,7 @@ body, html{
 
 .affix-top .navbar-toggle
 {
-    margin-top: -35px;
+    margin-top: 30px;
     width: 30px;
     height: 35px;
     padding-top: 10px;
@@ -303,10 +334,23 @@ body, html{
 
 .affix .navbar-toggle
 {
-    margin-top: 15px;
+    margin-top: 30px;
     width: 30px;
     height: 35px;
     padding-top: 10px;
+}
+
+.logo-img
+{
+    width: 160px !important;
+    margin-left: 15%;
+}
+
+.second-logo-img
+{
+    width: 110px !important;
+    margin-left: 15%;
+    
 }
 
 }
@@ -322,6 +366,7 @@ body, html{
     padding-bottom: 5px !important;
     padding-top: 5px !important;
     margin-top: 15px;
+    /*margin-right: 10px !important;*/ 
 
 
 }
@@ -371,9 +416,9 @@ body, html{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 85vh;
-    
-    margin: 0px;
+    height: 115vh;
+
+    margin: -100px 0 0 0 !important;
     padding: 0px;
     background-color: #1AA79E;
 
@@ -386,7 +431,7 @@ body, html{
 .title-text
 {
     padding: 0;
-    margin-top: 30%;    
+    margin-top: 400px;    
 
 }
 
@@ -398,7 +443,7 @@ body, html{
 
 .title-text-one > p
 {
-    font-family: Merriweather;
+    font-family: 'Merriweather';
     font-size: 12pt;
     color: white;
 
@@ -406,7 +451,7 @@ body, html{
 
 .title-text-two> p
 {
-    font-family: Merriweather;
+    font-family: 'Gotham-Light';
     font-size: 18pt;
     color: white;
     text-transform: uppercase;;
@@ -418,13 +463,13 @@ body, html{
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: white !important;
+  /*background-color: gray !important;*/
 
 }
 
 .affix-top {
   width: 100%;
-  padding-top: 45px;
+  
 
 }
 
@@ -435,7 +480,12 @@ body, html{
 
 .affix .secondNavbarList li
 {
-    margin-top: 12px;
+    margin-top: 30px;
+}
+
+.affix-top .secondNavbarList li
+{
+    margin-top: 30px;
 }
 
 .image
@@ -445,17 +495,17 @@ body, html{
 
 .onama-title-text
 {
-    font-family: Merriaweather;
+    font-family: 'Merriaweather';
     font-size: 14pt;
     text-align: center;
-    color: rgb(50,50,50);
+    color: red;
 
 
 }
 
 .onama-paragraph-text
 {
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-size: 12pt;
     margin-top: 20px;
     text-align: justify;
@@ -524,7 +574,7 @@ body, html{
 {
     text-transform: uppercase;
     color: white;
-    font-family: sans-serif;
+    font-family: 'Gotham-Light';
     font-size: 14pt;
     
     
@@ -533,7 +583,7 @@ body, html{
 .kontaktIme, .kontaktPozicija
 {
     color: white;
-    font-family: Roboto;
+    font-family: 'Roboto';
 }
 
 .kontaktIme, .subFooter-wrapper > p
@@ -571,6 +621,17 @@ body, html{
 .subFooter
 {
     background-color: rgb(20,20,20);
+}
+
+
+.navbarList > li
+{
+    font-family: 'Gotham-Light';
+}
+
+.secondNavbarList > li
+{
+    font-family: 'Gotham-Light;
 }
 
 
