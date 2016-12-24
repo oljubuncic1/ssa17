@@ -6,13 +6,19 @@ html {
     padding: 0px !important;
 }
 
-
-/*@font-face {
-    font-family: 'GothamBlack';
+@font-face {
+    font-family: 'Gotham-Black';
     src: url('fonts/Gotham-Black.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}*/
+}
+
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url('fonts/Gotham-Light.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .marginContainer {
     margin: 10px 5% 10px 5%;
@@ -29,14 +35,14 @@ html {
 
 .sectionHeadlineBottomRed {
     margin-top: -5px;
-    margin-bottom: 100px;
-    border-bottom: 3px red solid;
+    margin-bottom: 10px;
+    border-bottom: 3px #bf302a solid;
 }
 
 .mainNewsDiv {
     position: relative;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 0px 5px 5px grey;
     padding: 0px 0px 10px 0px;
     margin: 10px;
 }
@@ -71,9 +77,9 @@ html {
 
 .newsArticleHeader {
     font-family: 'Merriweather', serif;
-    font-size: 20px;
+    font-size: 19px;
     color: #333131;
-    padding-left: 180px;
+    padding-left: 170px;
     padding-right: 10px;
 }
 
@@ -82,7 +88,6 @@ html {
     font-size: 16px;
     color: grey;
     padding-left: 5%;
-    padding-right: 10px;
 }
 
 .newsMoreDiv {
@@ -105,6 +110,7 @@ html {
     width: 100%;
     border: 12px solid grey;
     margin-top: 20px;
+    vertical-align: middle;
 }
 
 .marginRight30 {
@@ -132,20 +138,39 @@ html {
 
 .aboutProjectTextTop {
     font-family: 'Merriweather', serif;
-    font-size: 17px;
+    font-size: 16px;
     color: grey;
 }
 
 .aboutProjectTextBottom {
     font-family: 'Merriweather', serif;
-    font-size: 17px;
+    font-size: 16px;
     color: grey;
     margin-top: 30px;
 }
 
 .aboutProjectBottomRed {
-    border-bottom: 2px red solid;
+    border-bottom: 2px #79595a solid;
     width: 90%;
+}
+
+.scheduleTba {
+    font-size: 150px;
+    color: #1aa699;
+    font-weight: bold;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.aboutProjectImgDiv {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    height: 100%;
+}
+
+.textAlignCenter {
+    text-align: center;
 }
 
 @media screen and (max-width: 767px) {
@@ -153,29 +178,25 @@ html {
         margin: 10px 3% 10px 3%;
     }
     .sectionHeadline {
-        font-size: 30px;
+        font-size: 28px;
         border-bottom: 8px #1aa699 solid;
     }
     .newsMainDate {
-        font-size: 20px!important;
+        font-size: 20px;
         width: 60px;
         height: 60px;
         padding: 5px;
         top: 45%;
         left: 20px;
     }
-    .newsDayMargin {
-        margin-bottom: -5px;
-        font-size: 20px;
-    }
     .newsArticleHeader {
         font-size: 16px;
-        margin-top: 30px;
-        padding-left: 5px;
+        margin-top: 35px;
+        padding: 5px;
     }
     .newsArticleText {
         font-size: 14px;
-        padding-left: 5px;
+        padding: 5px;
     }
     .newsMoreDiv {
         margin: 10px 0% 10px 5%;
@@ -187,21 +208,29 @@ html {
         font-size: 28px;
     }
     .aboutProjectTextTop {
-        font-size: 15px;
+        font-size: 14px;
     }
     .aboutProjectTextBottom {
-        font-size: 15px;
+        font-size: 14px;
         margin-top: 15px;
+    }
+    .newsDayMargin {
+        margin-bottom: 0px;
+        font-size: 18px;
+    }
+    .scheduleTba {
+        font-size: 50px;
     }
 }
 
 .mainNavbar {
-    background-color: #1AA79E !important;
+    background-color: transparent !important;
     border-radius: 0px !important;
     background: #1AA79E;
     border: 0px;
     margin-bottom: 0px;
-    height: 15%;
+    height: 100px;
+    box-shadow: none !important;
 }
 
 .mainNavbar .navbar-toggle {
@@ -219,7 +248,10 @@ html {
     border-radius: 0px !important;
     border: 0px;
     margin-bottom: 0px;
-    height: 10% !important;
+    height: 95px !important;
+    box-shadow: none !important;
+    padding-bottom: 0px !important;
+    border-bottom: 1px solid rgb(200, 200, 200);
 }
 
 .secondNavbar .navbar-toggle {
@@ -231,13 +263,24 @@ html {
 }
 
 .logo-img {
-    width: 140px !important;
-    margin-left: 20%;
+    width: 160px !important;
+    margin-left: 30%;
+}
+
+.second-logo-img {
+    width: 130px !important;
+    margin-left: 33%;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 @media only screen and (max-width: 400px) {
     .logo-img {
-        width: 100px !important;
+        width: 120px !important;
+        margin-left: 5%;
+    }
+    .second-logo-img {
+        width: 95px !important;
         margin-left: 5%;
     }
     .mainNavbar .navbar-toggle {
@@ -251,7 +294,7 @@ html {
         margin-left: -12px;
     }
     .affix-top .navbar-toggle {
-        margin-top: -35px;
+        margin-top: 30px;
         width: 30px;
         height: 35px;
         padding-top: 10px;
@@ -260,7 +303,7 @@ html {
         margin-left: -12px;
     }
     .affix .navbar-toggle {
-        margin-top: 10px;
+        margin-top: 30px;
         width: 30px;
         height: 35px;
         padding-top: 10px;
@@ -269,7 +312,7 @@ html {
 
 @media only screen and (max-width: 1100px) and (min-width: 400px) {
     .affix-top .navbar-toggle {
-        margin-top: -35px;
+        margin-top: 30px;
         width: 30px;
         height: 35px;
         padding-top: 10px;
@@ -281,10 +324,18 @@ html {
         margin-left: -12px;
     }
     .affix .navbar-toggle {
-        margin-top: 15px;
+        margin-top: 30px;
         width: 30px;
         height: 35px;
         padding-top: 10px;
+    }
+    .logo-img {
+        width: 160px !important;
+        margin-left: 15%;
+    }
+    .second-logo-img {
+        width: 110px !important;
+        margin-left: 15%;
     }
 }
 
@@ -295,6 +346,7 @@ html {
     padding-bottom: 5px !important;
     padding-top: 5px !important;
     margin-top: 15px;
+    /*margin-right: 10px !important;*/
 }
 
 .secondNavbarList {
@@ -333,8 +385,8 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 85vh;
-    margin: 0px;
+    height: 115vh;
+    margin: -100px 0 0 0 !important;
     padding: 0px;
     background-color: #1AA79E;
     -moz-transition: all 1s;
@@ -345,7 +397,7 @@ html {
 
 .title-text {
     padding: 0;
-    margin-top: 30%;
+    margin-top: 400px;
 }
 
 .title-text-one {
@@ -354,13 +406,13 @@ html {
 }
 
 .title-text-one>p {
-    font-family: Merriweather;
+    font-family: 'Merriweather';
     font-size: 12pt;
     color: white;
 }
 
 .title-text-two>p {
-    font-family: Merriweather;
+    font-family: 'Gotham-Light';
     font-size: 18pt;
     color: white;
     text-transform: uppercase;
@@ -371,12 +423,11 @@ html {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: white !important;
+    /*background-color: gray !important;*/
 }
 
 .affix-top {
     width: 100%;
-    padding-top: 45px;
 }
 
 .affix-bottom {
@@ -385,7 +436,11 @@ html {
 }
 
 .affix .secondNavbarList li {
-    margin-top: 12px;
+    margin-top: 30px;
+}
+
+.affix-top .secondNavbarList li {
+    margin-top: 30px;
 }
 
 .image {
@@ -393,14 +448,14 @@ html {
 }
 
 .onama-title-text {
-    font-family: Merriaweather;
+    font-family: 'Merriaweather';
     font-size: 14pt;
     text-align: center;
-    color: rgb(50, 50, 50);
+    color: red;
 }
 
 .onama-paragraph-text {
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-size: 12pt;
     margin-top: 20px;
     text-align: justify;
@@ -423,6 +478,7 @@ html {
 .footer {
     background-color: rgb(50, 50, 50);
     margin-top: 100px;
+    padding-top: 20px;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -452,19 +508,29 @@ html {
 .footerNaslov>p {
     text-transform: uppercase;
     color: white;
-    font-family: sans-serif;
+    font-family: 'Gotham-Light';
     font-size: 14pt;
 }
 
 .kontaktIme,
 .kontaktPozicija {
     color: white;
-    font-family: sans-serif;
+    font-family: 'Roboto';
 }
 
-.kontaktIme {
+.kontaktIme,
+.subFooter-wrapper>p {
     font-weight: bold;
-    font-size: 14pt;
+    font-size: 12pt;
+}
+
+.subFooter-wrapper>p {
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
 }
 
 .kontaktPozicija {
@@ -477,4 +543,17 @@ html {
 
 .socialWrapper a:hover {
     cursor: pointer;
+}
+
+.subFooter {
+    background-color: rgb(20, 20, 20);
+}
+
+.navbarList>li {
+    font-family: 'Gotham-Light';
+}
+
+.secondNavbarList>li {
+    font-family: 'Gotham-Light;
+
 }
