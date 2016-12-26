@@ -346,7 +346,7 @@ html {
     padding-bottom: 0px !important;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) {}
     .logo-img {
         width: 120px !important;
         margin-left: 5%;
@@ -695,6 +695,7 @@ html {
 .subFooter
 {
     background-color: rgb(20,20,20);
+    border-radius: none;
 }
 
 
