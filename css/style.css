@@ -7,15 +7,22 @@ html {
 }
 @font-face {
     font-family: 'Gotham-Black';
-    src: url('fonts/Gotham-Black.ttf') format('truetype');
+    src: url('../fonts/Gotham-Black.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham-Light';
-    src: url('fonts/Gotham-Light.TTF') format('truetype');
+    src: url('../fonts/Gotham-Light.TTF') format('truetype');
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('../fonts/Gotham-Light.TTF') format('truetype');
+    font-weight: bolder;
     font-style: normal;
 }
 
@@ -24,12 +31,13 @@ html {
 }
 
 .sectionHeadline {
-    font-family: Verdana, sans-serif;
+    font-family: 'Gotham-Bold', sans-serif;
     font-size: 35px;
-    font-weight: bold;
+    
     color: #1aa699;
     text-transform: uppercase;
     border-bottom: 10px #1aa79e solid;
+    margin-top: 100px;
 }
 
 .sectionHeadlineBottomRed {
@@ -40,7 +48,7 @@ html {
 
 .mainNewsDiv {
     position: relative;
-    border-radius: 5px;
+    border-radius: none;
     box-shadow: 0px 5px 5px grey;
     padding: 0px 0px 10px 0px;
     margin: 10px;
@@ -100,6 +108,11 @@ html {
     text-decoration: none!important;
 }
 
+.newsMoreText:hover
+{
+    cursor: pointer;
+}
+
 .aboutProjectRowMargin {
     margin-bottom: 5%;
     margin-top: 5%;
@@ -149,7 +162,7 @@ html {
 }
 
 .aboutProjectBottomRed {
-    border-bottom: 2px #79595a solid;
+    border-bottom: 1px #bf302a solid;
     width: 90%;
 }
 
@@ -260,7 +273,7 @@ html {
     border-radius: 0px !important;
     border: 0px;
     margin-bottom: 0px;
-    height: 95px !important;
+    height: 105px !important;
     box-shadow: none !important;
     padding-bottom: 0px !important;
     border-bottom: 1px solid rgb(200, 200, 200);
@@ -467,11 +480,11 @@ html {
 .navbarList>li>a {
     text-transform: capitalize;
     color: white !important;
-    font-size: 17px !important;
+    font-size: 19px !important;
     padding-bottom: 5px !important;
     padding-top: 5px !important;
     margin-top: 15px;
-    
+
     /*margin-right: 10px !important;*/ 
 
 
@@ -543,7 +556,7 @@ html {
 .title-text-two> p
 {
     font-family: 'Gotham-Light';
-    font-size: 18pt;
+    font-size: 22pt;
     color: white;
     text-transform: uppercase;
     ;
@@ -596,7 +609,7 @@ html {
     font-family: 'Merriaweather';
     font-size: 14pt;
     text-align: center;
-    color: red;
+    color: #bf302a;
 
 
 }
@@ -715,6 +728,7 @@ html {
 .navbarList > li
 {
     font-family: 'Gotham-Light';
+
 }
 
 .secondNavbarList > li
