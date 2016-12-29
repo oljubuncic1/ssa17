@@ -224,13 +224,25 @@ html {
 
 .mainNavbar
 {
-    background-color: transparent !important;
+    
     border-radius: 0px !important;
     background: #1AA79E;
     border: 0px;
     margin-bottom: 0px;
-    height: 100px;
+    
     box-shadow: none !important;
+}
+
+.mainNavbar1
+{
+    background-color: transparent !important;
+    height: 100px;
+}
+
+.mainNavbar2
+{
+    background-color: #1AA79E !important;
+    height: 115px;
 }
 
 .mainNavbar .navbar-toggle {
@@ -459,6 +471,7 @@ html {
     padding-bottom: 5px !important;
     padding-top: 5px !important;
     margin-top: 15px;
+    
     /*margin-right: 10px !important;*/ 
 
 

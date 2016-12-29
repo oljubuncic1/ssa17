@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/kontakt.css">
 
+     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+
 </head>
 
 <?php
@@ -76,7 +80,32 @@
         {
             
             // slanje maila
-            $confMes = "Hvala što ste nas kontaktirali. Naš tim će nastojati da u što kraćem roku odgovori na vaš upit.";
+            $primi = array(
+                'adina.omerovic@softskillsacademy.ba',
+                'emina.sikira@softskillsacademy.ba',
+                'orhan.ljubuncic@softskillsacademy.ba'
+            );
+
+            $subject = '[SSA] Kontakt forma';
+            $eol = PHP_EOL;
+
+            $message = '<html><body>';
+            $message .= 'Od '.$ime.'<br />';
+            $message .= 'Email: '.$email.'<br /><br />';
+            $message .= $poruka;
+            $message .= '</body></html>';
+
+            $headers = 'From: softskillsacademy.ba <noreply@softskillsacademy.ba> ' . "\r\n" .
+                            'Reply-To: softskillsacademy.ba <noreply@softskillsacademy.ba>' . "\r\n" .
+                            'X-Mailer: PHP/' . phpversion();
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=\"UTF-8\"".$eol;
+            $headers .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
+
+            foreach($primi as $to){
+                mail($to, $subject, $message, $headers);
+            }
+            $confMes = "Hvala što ste nas kontaktirali. Naš tim će nastojati da u što kraćem roku odgovori na vašu poruku.";
         }
         else
         {
@@ -96,18 +125,9 @@
 
 <body>
 
-<div class="jumbotron jumbotron-sm">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <h1 class="h1">
-                    Contact us <small>Feel free to contact us</small></h1>
-            </div>
-        </div>
-    </div>
-</div>
+<?php include 'mainNavbar2.html'; ?>
 
-<div class="container-fluid">
+<div class="container-fluid kontaktAll">
 
     <div class="row">
         <div class="col-md-offset-1 col-md-4">
@@ -233,6 +253,8 @@
         </div>
     </div>
 </div>
+
+<?php include 'footer.html'; ?>
 
 
 </body>
