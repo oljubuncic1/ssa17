@@ -1,5 +1,6 @@
 <head>
 
+    <title>Soft Skills Academy Sarajevo '17</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
