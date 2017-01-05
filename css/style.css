@@ -538,7 +538,7 @@ html {
 
 .title-text {
     padding: 0;
-    margin-top: 400px;
+    margin-top: 350px;
 }
 
 .title-text-one {
@@ -559,7 +559,15 @@ html {
     font-size: 22pt;
     color: white;
     text-transform: uppercase;
-    ;
+    
+}
+
+.title-text-three> p
+{
+    font-family: 'Gotham-Light';
+    font-size: 18pt;
+    color: white;
+    
 }
 
 .affix {
@@ -646,6 +654,17 @@ html {
     .socialMedia {
         margin-left: 40px;
     }
+
+
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .socialWrapper {
+       margin-left: 200px auto !important;
+}
+
 }
 
 .socialMedia {
@@ -657,8 +676,10 @@ html {
 }
 
 .socialImage {
-    width: 50px;
+    width: 120px;
+
     display: inline-block;
+
 }
 
 .footerNaslov {

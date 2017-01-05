@@ -125,7 +125,7 @@
 
 <body>
 
-<?php include 'mainNavbar2.html'; ?>
+<?php include 'partials/mainNavbar2.html'; ?>
 
 <div class="container-fluid kontaktAll">
 
@@ -254,7 +254,7 @@
     </div>
 </div>
 
-<?php include 'footer.html'; ?>
+<?php include 'partials/footer.html'; ?>
 
 
 </body>
