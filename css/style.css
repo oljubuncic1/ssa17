@@ -277,6 +277,7 @@ html {
     box-shadow: none !important;
     padding-bottom: 0px !important;
     border-bottom: 1px solid rgb(200, 200, 200);
+    
 }
 
 .secondNavbar .navbar-toggle {
@@ -298,8 +299,9 @@ html {
 
 .second-logo-img
 {
+    position: absolute;
     width: 130px !important;
-    margin-left: 33%;
+    margin-left: 5%;
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;
 
@@ -492,6 +494,8 @@ html {
 
 .secondNavbarList {
     background-color: white !important;
+    position: absolute;
+    margin-left: 15%;
 }
 
 .secondNavbarList>li>a {
@@ -549,14 +553,14 @@ html {
 .title-text-one > p
 {
     font-family: 'Merriweather';
-    font-size: 12pt;
+    font-size: 13pt;
     color: white;
 }
 
 .title-text-two> p
 {
     font-family: 'Gotham-Light';
-    font-size: 22pt;
+    font-size: 23pt;
     color: white;
     text-transform: uppercase;
     
@@ -565,7 +569,7 @@ html {
 .title-text-three> p
 {
     font-family: 'Gotham-Light';
-    font-size: 18pt;
+    font-size: 19pt;
     color: white;
     
 }
@@ -585,9 +589,7 @@ html {
     /*background-color: gray !important;*/
 }
 
-.affix-top {
-    width: 100%;
-}
+
 
 .affix-bottom {
     position: absolute;
@@ -732,7 +734,7 @@ html {
 }
 
 .prvaKontakt {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .socialWrapper a:hover {
