@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Soft Skills Academy Sarajevo '17</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
@@ -19,6 +20,8 @@
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="js/script.js"></script>
     <script src="js/scroll.js"></script>
+
+   
 
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">

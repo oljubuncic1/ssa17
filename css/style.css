@@ -62,9 +62,9 @@ html {
     text-transform: uppercase;
     position: absolute;
     background-color: #1aa79e;
-    font-size: 40px;
-    width: 120px;
-    height: 120px;
+    font-size: 30px;
+    width: 110px;
+    height: 110px;
     color: white;
     text-align: center;
     padding: 2px;
@@ -75,7 +75,7 @@ html {
 
 .newsDayMargin {
     margin-bottom: -10px;
-    font-size: 49px;
+    font-size: 44px;
 }
 
 .newsMonth {
@@ -88,6 +88,7 @@ html {
     color: #333131;
     padding-left: 170px;
     padding-right: 10px;
+    padding-top: 20px;
 }
 
 .newsArticleText {
@@ -104,7 +105,7 @@ html {
 
 .newsMoreText {
     color: #1aa79e;
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: none!important;
 }
 
@@ -294,7 +295,8 @@ html {
 .logo-img
 {
     width: 160px !important;
-    margin-left: 30%;
+    margin-left: 5%;
+    position: absolute;
 }
 
 .second-logo-img
@@ -447,7 +449,7 @@ html {
 .second-logo-img
 {
     width: 110px !important;
-    margin-left: 15%;
+    margin-left: 5%;
     
 }
 
@@ -475,7 +477,7 @@ html {
     }
     .second-logo-img {
         width: 110px !important;
-        margin-left: 15%;
+        margin-left: 5%;
     }
 }
 
@@ -492,11 +494,26 @@ html {
 
 }
 
+
 .secondNavbarList {
     background-color: white !important;
     position: absolute;
     margin-left: 15%;
+    
 }
+
+
+
+@media only screen and (max-width: 1100px) {
+
+    .secondNavbarList
+    {
+        width: 100% !important;
+        margin-left: -5% !important;
+
+    }
+
+    }
 
 .secondNavbarList>li>a {
     text-transform: uppercase;
@@ -530,7 +547,7 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 115vh;
+    height: 800px;
     margin: -100px 0 0 0 !important;
     padding: 0px;
     background-color: #1AA79E;
@@ -542,7 +559,16 @@ html {
 
 .title-text {
     padding: 0;
-    margin-top: 350px;
+    margin-top: 480px;
+    margin-left: 90px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .title-text
+    {
+        margin-left: 0px;
+    }
+
 }
 
 .title-text-one {
@@ -617,7 +643,7 @@ html {
 .onama-title-text
 {
     font-family: 'Merriaweather';
-    font-size: 14pt;
+    font-size: 16pt;
     text-align: center;
     color: #bf302a;
 
@@ -761,6 +787,8 @@ html {
 
 .subFooter {
     background-color: rgb(20, 20, 20);
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 .navbarList>li {
