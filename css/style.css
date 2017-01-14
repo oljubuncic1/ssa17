@@ -243,13 +243,24 @@ html {
     background: #1AA79E;
     border: 0px;
     margin-bottom: 0px;
-    
     box-shadow: none !important;
 }
+
+.mainNavbar .navbar-toggle
+{
+    margin-bottom: 50px;
+}
+
+.navbarList2
+{
+     margin-bottom: 20px !important;
+}
+
 
 .mainNavbar1
 {
     background-color: transparent !important;
+    background: #1AA79E;
     height: 100px;
 }
 
@@ -257,11 +268,29 @@ html {
 {
     background-color: #1AA79E !important;
     height: 115px;
+    z-index: 1000;
 }
 
 .mainNavbar .navbar-toggle {
     margin-top: 30px;
+    
     width: 50px;
+}
+
+.mainNavbar1 .navbar-toggle
+{
+    margin-bottom: 50px;
+}
+
+.mainNavbar2 .navbar-toggle
+{
+    margin-bottom: 31px;   
+
+}
+
+.mainNavbar2 .navbar-collapse
+{
+    border: none !important;
 }
 
 .mainNavbar .navbar-toggle .icon-bar {
@@ -297,6 +326,7 @@ html {
     width: 160px !important;
     margin-left: 5%;
     position: absolute;
+    
 }
 
 .second-logo-img
@@ -443,7 +473,7 @@ html {
 .logo-img
 {
     width: 160px !important;
-    margin-left: 15%;
+    margin-left: 5%;
 }
 
 .second-logo-img
@@ -471,10 +501,7 @@ html {
         height: 35px;
         padding-top: 10px;
     }
-    .logo-img {
-        width: 160px !important;
-        margin-left: 15%;
-    }
+    
     .second-logo-img {
         width: 110px !important;
         margin-left: 5%;
@@ -495,6 +522,8 @@ html {
 }
 
 
+
+
 .secondNavbarList {
     background-color: white !important;
     position: absolute;
@@ -512,6 +541,20 @@ html {
         margin-left: -5% !important;
 
     }
+
+   
+
+    .mainNavbar2 .navbar-collapse
+    {
+        width: 100% !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        background-color: #1AA79E !important;
+        padding-bottom: 20px;
+
+    }
+
+
 
     }
 
