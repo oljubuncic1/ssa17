@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+
+.naslov
+{
+	text-align: center;
+	font-family: 'Roboto';
+	color: #1AA79E;
+	font-size: 30px;
+	margin-top: 70px;
+	margin-bottom: 50px;
+}
+
+.prethodni, .sljedeci
+{
+	background-color: #bf302a;
+	border-color: #bf302a;
+	color: white;
+}
+
+.prethodni:hover, .sljedeci:hover
+{
+	color: white;
+}
+
+.koraci .active .korak, .koraci .active .korak:hover, .koraci .active .korak:focus
+{
+	background-color: #1AA79E;
+}
+
+.tekstKoraka
+{
+	color: #1AA79E;
+}
+
+.koraci .active .korak .tekstKoraka
+{
+	color: white !important;
+}
+
