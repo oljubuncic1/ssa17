@@ -335,6 +335,11 @@ textarea
    
 }
 
+.btnObrisi:hover, .btnObrisi:focus
+{
+    color:white !important;
+}
+
 #radioBtn1 .notActive{
     color: #1AA79E;
     background-color: #fff;

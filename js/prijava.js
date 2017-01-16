@@ -112,15 +112,15 @@ $(document).on('click', function (e) {
                             <label for="fakultet">\
                                 Fakultet*</label>\
                                 <a class=" listbox btn btn-info btn-select btn-select-light">\
-    <input type="hidden" class="btn-select-input" id="" name="fakultet' + i + '" value="" />\
+    <input type="hidden" class="btn-select-input" id="fax' + i +'" name="fakultet' + i + '" value="S" />\
     <span class="btn-select-value">S</span>\
     <span class="btn-select-arrow glyphicon glyphicon-chevron-down"></span>\
     <ul class="selectLista">\
-        <li class="selected">S</li>\
-        <li>ETF</li>\
-        <li>Medicina</li>\
-        <li>Farmacija</li>\
-        <li>PPF</li>\
+        <li class="selected listItem">S</li>\
+        <li class="listItem">ETF</li>\
+        <li class="listItem">Medicina</li>\
+        <li class="listItem">Farmacija</li>\
+        <li class="listItem">PPF</li>\
     </ul>\
 </a>\
                                   <p class="error"><?php echo $fakultetErr; ?></p>\
@@ -130,16 +130,16 @@ $(document).on('click', function (e) {
                             <label for="godinaStudija">\
                                 Godina studija*</label>\
                                 <a class=" listbox btn btn-info btn-select btn-select-light">\
-    <input type="hidden" class="btn-select-input" id="" name="godina' + i + '" value="" />\
+    <input type="hidden" class="btn-select-input" id="" name="godina' + i + '" value="1." />\
     <span class="btn-select-value">1.</span>\
     <span class="btn-select-arrow glyphicon glyphicon-chevron-down"></span>\
     <ul class="selectLista">\
-        <li class="selected">1.</li>\
-        <li>2.</li>\
-        <li>3.</li>\
-        <li>4.</li>\
-        <li>5.</li>\
-        <li>6.</li>\
+        <li class="selected listItem">1.</li>\
+        <li class="listItem">2.</li>\
+        <li class="listItem">3.</li>\
+        <li class="listItem">4.</li>\
+        <li class="listItem">5.</li>\
+        <li class="listItem">6.</li>\
     </ul>\
 </a>\
                                   <p class="error"><?php echo $godinaStudijaErr; ?></p>\
@@ -196,5 +196,14 @@ $('#radioBtn2 a').on('click', function(){
     $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
     $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
 });
+
+
+$('.listItem').on('click', function(){
+    var vrijednost = $(this).html();
+    $(this).parent().prev().prev().prev().prop('value', vrijednost);
+
+});
+
+
 
 });

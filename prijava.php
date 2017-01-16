@@ -22,6 +22,7 @@
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="js/prijava.js"></script>
     <script src="js/select.js"></script>
+     <script src="js/scroll.js"></script>
 
 
 </head>
@@ -37,6 +38,8 @@
                 <p class="naslov">Prijavi se - Budi korak ispred!</p>
             </div>
         </div>
+
+        <form name="prijavaForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="row form-group">
             <div class="col-xs-12 col-md-4">
                 <ul class="nav nav-pills nav-stacked  thumbnail setup-panel koraci">
@@ -67,7 +70,7 @@
                 </ul>
             </div>
             <div class="col-xs-12 col-md-8">
-            <form>
+            
 
     <div class="setup-content" id="step-1">
             <div class="col-xs-12 well">
@@ -104,22 +107,22 @@
                             <label for="majica">
                                 Veličina majice*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="" name="" value="" />
+    <input type="hidden" class="btn-select-input" id="majica" name="majica" value="S" />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
-        <li class="selected">S</li>
-        <li>M</li>
-        <li>L</li>
-        <li>XL</li>
-        <li>XXL</li>
+        <li class="selected listItem">S</li>
+        <li class="majica listItem">M</li>
+        <li class="majica listItem">L</li>
+        <li class="majica listItem">XL</li>
+        <li class="majica listItem">XXL</li>
     </ul>
 </a>
                                   <p class="error"><?php echo $majicaErr; ?></p>
                         </div>           
                 
     
-        <a class="sljedeci btn pull-right">Sljedeći korak</a>
+        <a class="sljedeci btn pull-right" >Sljedeći korak</a>
     
                 
 <!-- </form> -->
@@ -128,11 +131,11 @@
         
     </div>
 
-</form>
 
 
 
-            <form>
+
+           
 
     <div  class="setup-content" id="step-2">
             <div class="col-xs-12 well">
@@ -146,15 +149,15 @@
                             <label for="fakultet">
                                 Fakultet*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="" name="fakultet0" value="" />
+    <input type="hidden" class="btn-select-input" id="fax" name="fakultet0" value="S" />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
-        <li class="selected">S</li>
-        <li>ETF</li>
-        <li>Medicina</li>
-        <li>Farmacija</li>
-        <li>PPF</li>
+        <li class="selected listItem">S</li>
+        <li class="listItem">ETF</li>
+        <li class="listItem">Medicina</li>
+        <li class="listItem">Farmacija</li>
+        <li class="listItem">PPF</li>
     </ul>
 </a>
                                   <p class="error"><?php echo $fakultetErr; ?></p>
@@ -164,16 +167,16 @@
                             <label for="godinaStudija">
                                 Godina studija*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="" name="godina0" value="" />
+    <input type="hidden" class="btn-select-input" id="god" name="godina0" value="1." />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
-        <li class="selected">1.</li>
-        <li>2.</li>
-        <li>3.</li>
-        <li>4.</li>
-        <li>5.</li>
-        <li>6.</li>
+        <li class="selected listItem">1.</li>
+        <li class="listItem">2.</li>
+        <li class="listItem">3.</li>
+        <li class="listItem">4.</li>
+        <li class="listItem">5.</li>
+        <li class="listItem">6.</li>
     </ul>
 </a>
                                   <p class="error"><?php echo $godinaStudijaErr; ?></p>
@@ -250,11 +253,10 @@
         
     </div>
 
-</form>
 
 
 
-            <form>
+
 
     <div  class="setup-content" id="step-3">
             <div class="col-xs-12 well">
@@ -278,11 +280,9 @@
         
     </div>
 
-</form>
 
 
 
-            <form>
 
     <div  class="setup-content" id="step-4">
             <div class="col-xs-12 well">
@@ -292,12 +292,12 @@
                             <label for="ranijeUcesce">
                                 Ranije učešće na SSA*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="" name="ranije" value="" />
+    <input type="hidden" class="btn-select-input" id="" name="ranije" value="NE" />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
-        <li class="selected">NE</li>
-        <li>DA</li>
+        <li class="selected listItem">NE</li>
+        <li class="listItem">DA</li>
     </ul>
 </a>
                                   <p class="error"><?php echo $ranijeErr; ?></p>
@@ -316,12 +316,12 @@
                             <label for="trenutno">
                                 Trenutno zaposlenje*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="" name="trenutno" value="" />
+    <input type="hidden" class="btn-select-input" id="" name="trenutno" value="NE" />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
-        <li class="selected">NE</li>
-        <li>DA</li>
+        <li class="selected listItem">NE</li>
+        <li class="listItem">DA</li>
     </ul>
 </a>
                                   <p class="error"><?php echo $trenutnoErr; ?></p>
@@ -363,11 +363,9 @@
         
     </div>
 
-</form>
 
 
 
-            <form>
 
     <div  class="setup-content" id="step-5">
             <div class="col-xs-12 well">
@@ -376,9 +374,9 @@
  <div class="form-group col-xs-12">
                             <label for="pismo">
                                 Dodatne napomene</label>
-                            <textarea name="pismo" id="pismo" class="form-control <?php if($mesErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
-                                ><?php echo $pismo;?></textarea>
-                                <p class="error"><?php echo $pismoErr; ?></p>
+                            <textarea name="dodatne" id="dodatne" class="form-control <?php if($dodatneErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
+                                ><?php echo $dodatne;?></textarea>
+                                <p class="error"><?php echo $dodatneErr; ?></p>
                         </div>             
                 
     
@@ -391,16 +389,14 @@
         
     </div>
 
-</form>
 
-<form>
 
     <div  class="setup-content" id="step-6">
             <div class="col-xs-12 well">
                <p class="napomena">Klikom na dugme Pošalji prijavu Vaša prijava će biti poslana. Molimo Vas da prije slanja još jednom provjerite da li ste ispravno popunili sve korake.</p>
 
  <div class="form-group col-xs-12">
-                           <input type="submit" value="Pošalji prijavu" class="btnSlanje col-xs-12  btn">
+                           <input type="submit" name="prijavaSubmit" value="Pošalji prijavu" class="btnSlanje col-xs-12  btn">
                         </div>             
                 
     
