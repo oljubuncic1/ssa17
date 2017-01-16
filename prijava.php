@@ -21,6 +21,8 @@
      <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="js/prijava.js"></script>
+    <script src="js/select.js"></script>
+
 
 </head>
 
@@ -64,13 +66,56 @@
             <form>
 
     <div class="setup-content" id="step-1">
-            <div class="col-xs-12 well text-center">
-                <h1> STEP 1</h1>
+            <div class="col-xs-12 well">
+               <!-- <p class="naslov1">Osnovni podaci</p> -->
+             <p class="napomena"><i>Napomena: Polja označena sa * su obavezna.</i></p> 
 
-<!-- <form> -->               
+            <div class="form-group col-xs-12 col-md-6">
+                            <label for="ime">
+                                Ime*</label>
+                            <input type="text" class="form-control" id="ime" name="ime"  value="<?php echo $ime;?>"/>
+                        </div>
+                        <div class="form-group col-xs-12 col-md-6">
+                            <label for="prezime">
+                                Prezime*</label>
+                            <input type="text" class="form-control" id="prezime" name="prezime"  value="<?php echo $prezime;?>"/>
+                        </div>
+                         <div class="form-group col-xs-12 col-md-6">
+                            <label for="datum">
+                                Datum rođenja*</label>
+                            <input type="text" class="form-control" id="datum" name="datum"  value="<?php echo $datum;?>"/>
+                        </div>
+                          <div class="form-group col-xs-12 col-md-6">
+                            <label for="telefon">
+                                Broj telefona*</label>
+                            <input type="text" class="form-control" id="telefon" name="telefon"  value="<?php echo $telefon;?>"/>
+                        </div>
+                        <div class="form-group col-xs-12 col-md-6">
+                            <label for="email">
+                                Email*</label>
+                            <input type="text" class="form-control <?php if($emailErr != '') echo tbError; else echo ''; ?>" id="email" name="email" value="<?php echo $email;?>"/>
+                            <p class="error"><?php echo $emailErr; ?></p>
+                        </div>   
+                        <div class="form-group col-xs-12 col-md-6">
+                            <label for="majica">
+                                Veličina majice*</label>
+                                <a class=" listbox btn btn-info btn-select btn-select-light">
+    <input type="hidden" class="btn-select-input" id="" name="" value="" />
+    <span class="btn-select-value">Select an Item</span>
+    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+    <ul class="selectLista">
+        <li class="selected">S</li>
+        <li>M</li>
+        <li>L</li>
+        <li>XL</li>
+        <li>XXL</li>
+    </ul>
+</a>
+                                  <p class="error"><?php echo $majicaErr; ?></p>
+                        </div>           
                 
     
-        <a id="prethodni" class="btn pull-left sljedeci">Prethodni korak</a><a id='sljedeci' class="btn prethodni pull-right">Sljedeći korak</a>
+        <a class="sljedeci btn pull-right">Sljedeći korak</a>
     
                 
 <!-- </form> -->
@@ -92,7 +137,7 @@
 <!-- <form> -->               
                 
     
-        <a id="prethodni" class="btn pull-left sljedeci">Prethodni korak</a><a id='sljedeci' class="btn prethodni pull-right">Sljedeći korak</a>
+        <a class="btn pull-left prethodni">Prethodni korak</a><a class="sljedeci btn pull-right">Sljedeći korak</a>
     
                 
 <!-- </form> -->
@@ -108,13 +153,19 @@
             <form>
 
     <div  class="setup-content" id="step-3">
-            <div class="col-xs-12 well text-center">
-                <h1> STEP 3</h1>
+            <div class="col-xs-12 well">
+                <p class="napomena">Motivaciono pismo je ključni kriterij prilikom izbora kandidata za radionicu. Preporučujemo vam da pažljivo napišete što bolje motivaciono pismo kako biste imali veće šanse za učešće na radionici.</p>
 
-<!-- <form> -->               
+ <div class="form-group col-xs-12">
+                            <label for="pismo">
+                                Motivaciono pismo*</label>
+                            <textarea name="pismo" id="pismo" class="form-control <?php if($mesErr != '') echo tbError; else echo ''; ?>" rows="12" cols="25"
+                                ><?php echo $pismo;?></textarea>
+                                <p class="error"><?php echo $pismoErr; ?></p>
+                        </div>             
                 
     
-        <a id="prethodni" class="btn pull-left sljedeci">Prethodni korak</a><a id='sljedeci' class="btn prethodni pull-right">Sljedeći korak</a>
+        <a class="btn pull-left prethodni">Prethodni korak</a><a class="sljedeci btn pull-right">Sljedeći korak</a>
     
                 
 <!-- </form> -->
@@ -136,7 +187,7 @@
 <!-- <form> -->               
                 
     
-        <a id="prethodni" class="btn pull-left sljedeci">Prethodni korak</a><a id='sljedeci' class="btn prethodni pull-right">Sljedeći korak</a>
+        <a class="btn pull-left prethodni">Prethodni korak</a><a class="sljedeci btn pull-right">Sljedeći korak</a>
     
                 
 <!-- </form> -->
@@ -159,7 +210,7 @@
                 
    
         
-        <a id="prethodni" class="btn pull-left sljedeci">Prethodni korak</a><a id='sljedeci' class="btn prethodni pull-right">Sljedeći korak</a>
+        <a class="btn pull-left prethodni">Prethodni korak</a><a class="sljedeci btn pull-right">Sljedeći korak</a>
     
                 
 <!-- </form> -->
