@@ -58,8 +58,12 @@
                     </a></li> 
                     <li ><a class="korak" href="#step-5">
                         <h4 class="list-group-item-heading tekstKoraka">Korak 5</h4>
-                        <p class="list-group-item-text tekstKoraka">Ostalo</p>
-                    </a></li>   
+                        <p class="list-group-item-text tekstKoraka">Dodatne napomene</p>
+                    </a></li> 
+                     <li ><a class="korak" href="#step-6">
+                        <h4 class="list-group-item-heading tekstKoraka">Korak 6</h4>
+                        <p class="list-group-item-text tekstKoraka">Slanje prijave</p>
+                    </a></li>    
                 </ul>
             </div>
             <div class="col-xs-12 col-md-8">
@@ -131,10 +135,110 @@
             <form>
 
     <div  class="setup-content" id="step-2">
-            <div class="col-xs-12 well text-center">
-                <h1> STEP 2</h1>
+            <div class="col-xs-12 well">
 
-<!-- <form> -->               
+            <label class="podnaslov podaciOFaxu">Podaci o fakultetu</label><br><br>
+
+            <div  id="sviFaksovi">
+            <div id="addr0">
+                
+<div class="form-group col-xs-12 col-md-9">
+                            <label for="fakultet">
+                                Fakultet*</label>
+                                <a class=" listbox btn btn-info btn-select btn-select-light">
+    <input type="hidden" class="btn-select-input" id="" name="fakultet0" value="" />
+    <span class="btn-select-value">Select an Item</span>
+    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+    <ul class="selectLista">
+        <li class="selected">S</li>
+        <li>ETF</li>
+        <li>Medicina</li>
+        <li>Farmacija</li>
+        <li>PPF</li>
+    </ul>
+</a>
+                                  <p class="error"><?php echo $fakultetErr; ?></p>
+                        </div>
+
+                        <div class="form-group col-xs-12 col-md-3">
+                            <label for="godinaStudija">
+                                Godina studija*</label>
+                                <a class=" listbox btn btn-info btn-select btn-select-light">
+    <input type="hidden" class="btn-select-input" id="" name="godina0" value="" />
+    <span class="btn-select-value">Select an Item</span>
+    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+    <ul class="selectLista">
+        <li class="selected">1.</li>
+        <li>2.</li>
+        <li>3.</li>
+        <li>4.</li>
+        <li>5.</li>
+        <li>6.</li>
+    </ul>
+</a>
+                                  <p class="error"><?php echo $godinaStudijaErr; ?></p>
+                        </div>
+
+
+                        <div class="form-group col-xs-12 col-md-6 prviFaks">
+                            <label for="odsjek">
+                                Odsjek</label>
+                            <input type="text" class="form-control" id="odsjek0" name="odsjek0"  value="<?php echo $odsjek0;?>"/>
+                        </div>
+
+                        </div>
+
+                        <div id="addr1"></div>
+
+                        </div>
+
+
+                         <div class="form-group col-xs-12">
+                           <input type="button" value="Dodaj fakultet" class="btnSlanje col-xs-12  btn " id="add_row">
+                        </div> 
+
+                            
+                          <div class="form-group col-xs-12 col-md-12">
+                         <label class="podnaslov">Poznavanje engleskog jezika</label><br><br>
+
+                            
+            
+                        </div>
+
+                        <div class="form-group col-xs-12 col-md-6">
+                            <label for="govor">
+                                Govor*</label><br>
+
+                    <div id="radioBtn1" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="govor" data-title="1">1</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="govor" data-title="2">2</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="govor" data-title="3">3</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="govor" data-title="4">4</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="govor" data-title="5">5</a>
+
+                    </div>
+                    <input type="hidden" name="govor" id="govor">
+                                      </div>
+
+                         <div class="form-group col-xs-12 col-md-6">
+                            <label for="raz">
+                                Razumijevanje*</label><br>
+
+                    <div id="radioBtn2" class="btn-group">
+                        <a class="btn btn-primary btn-sm active" data-toggle="raz" data-title="1">1</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="raz" data-title="2">2</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="raz" data-title="3">3</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="raz" data-title="4">4</a>
+                        <a class="btn btn-primary btn-sm notActive" data-toggle="raz" data-title="5">5</a>
+
+                    </div>
+                    <input type="hidden" name="raz" id="raz">
+                                      </div>
+
+                    
+
+
+           
                 
     
         <a class="btn pull-left prethodni">Prethodni korak</a><a class="sljedeci btn pull-right">Sljedeći korak</a>
@@ -181,10 +285,73 @@
             <form>
 
     <div  class="setup-content" id="step-4">
-            <div class="col-xs-12 well text-center">
-                <h1> STEP 4</h1>
+            <div class="col-xs-12 well">
+                
 
-<!-- <form> -->               
+<div class="form-group col-xs-12 col-md-4 margina">
+                            <label for="ranijeUcesce">
+                                Ranije učešće na SSA*</label>
+                                <a class=" listbox btn btn-info btn-select btn-select-light">
+    <input type="hidden" class="btn-select-input" id="" name="ranije" value="" />
+    <span class="btn-select-value">Select an Item</span>
+    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+    <ul class="selectLista">
+        <li class="selected">NE</li>
+        <li>DA</li>
+    </ul>
+</a>
+                                  <p class="error"><?php echo $ranijeErr; ?></p>
+                        </div>  
+
+                        <div class="form-group col-xs-12">
+                            <label for="radno">
+                                Radno iskustvo</label>
+                            <textarea name="radno" id="radno" class="form-control <?php if($radnoErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
+                                ><?php echo $radno;?></textarea>
+                                <p class="error"><?php echo $radnoErr; ?></p>
+                        </div>  
+
+
+                        <div class="form-group col-xs-12 col-md-4 margina">
+                            <label for="trenutno">
+                                Trenutno zaposlenje*</label>
+                                <a class=" listbox btn btn-info btn-select btn-select-light">
+    <input type="hidden" class="btn-select-input" id="" name="trenutno" value="" />
+    <span class="btn-select-value">Select an Item</span>
+    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+    <ul class="selectLista">
+        <li class="selected">NE</li>
+        <li>DA</li>
+    </ul>
+</a>
+                                  <p class="error"><?php echo $trenutnoErr; ?></p>
+                        </div>  
+
+
+                        <div class="form-group col-xs-12">
+                            <label for="softUcesce">
+                                Učešće na soft skills treninzima</label>
+                            <textarea name="softUcesce" id="softUcesce" class="form-control <?php if($softUcesceErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
+                                ><?php echo $softUcesce;?></textarea>
+                                <p class="error"><?php echo $softUcesceErr; ?></p>
+                        </div> 
+
+
+                        <div class="form-group col-xs-12">
+                            <label for="seminari">
+                                Učešće na seminarima</label>
+                            <textarea name="seminari" id="seminari" class="form-control <?php if($seminariErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
+                                ><?php echo $seminari;?></textarea>
+                                <p class="error"><?php echo $seminariErr; ?></p>
+                        </div>  
+
+                        <div class="form-group col-xs-12">
+                            <label for="nvo">
+                                Iskustvo u NVO</label>
+                            <textarea name="nvo" id="nvo" class="form-control <?php if($nvoErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
+                                ><?php echo $nvo;?></textarea>
+                                <p class="error"><?php echo $nvoErr; ?></p>
+                        </div>      
                 
     
         <a class="btn pull-left prethodni">Prethodni korak</a><a class="sljedeci btn pull-right">Sljedeći korak</a>
@@ -203,14 +370,41 @@
             <form>
 
     <div  class="setup-content" id="step-5">
-            <div class="col-xs-12 well text-center">
-                <h1> STEP 5</h1>
+            <div class="col-xs-12 well">
+               <p class="napomena">Ukoliko smatrate da postoji još nešto važno što bismo trebali znati iskoristite ovo polje kako biste nam to rekli.</p>
 
-<!-- <form> -->               
+ <div class="form-group col-xs-12">
+                            <label for="pismo">
+                                Dodatne napomene</label>
+                            <textarea name="pismo" id="pismo" class="form-control <?php if($mesErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
+                                ><?php echo $pismo;?></textarea>
+                                <p class="error"><?php echo $pismoErr; ?></p>
+                        </div>             
                 
-   
-        
+    
         <a class="btn pull-left prethodni">Prethodni korak</a><a class="sljedeci btn pull-right">Sljedeći korak</a>
+    
+                
+<!-- </form> -->
+                
+            </div>
+        
+    </div>
+
+</form>
+
+<form>
+
+    <div  class="setup-content" id="step-6">
+            <div class="col-xs-12 well">
+               <p class="napomena">Klikom na dugme Pošalji prijavu Vaša prijava će biti poslana. Molimo Vas da prije slanja još jednom provjerite da li ste ispravno popunili sve korake.</p>
+
+ <div class="form-group col-xs-12">
+                           <input type="submit" value="Pošalji prijavu" class="btnSlanje col-xs-12  btn">
+                        </div>             
+                
+    
+        <a class="btn pull-left prethodni">Prethodni korak</a>
     
                 
 <!-- </form> -->

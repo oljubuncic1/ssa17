@@ -1,4 +1,3 @@
-
 // Activate Next Step
 
 $(document).ready(function() {
@@ -104,6 +103,98 @@ $(document).on('click', function (e) {
     }
 });
 
+// Add , Delete row dynamically
+
+     $(document).ready(function(){
+      var i=1;
+     $("#add_row").click(function(){
+              $('#addr'+i).html('<div class="form-group col-xs-12 col-md-9">\
+                            <label for="fakultet">\
+                                Fakultet*</label>\
+                                <a class=" listbox btn btn-info btn-select btn-select-light">\
+    <input type="hidden" class="btn-select-input" id="" name="fakultet' + i + '" value="" />\
+    <span class="btn-select-value">S</span>\
+    <span class="btn-select-arrow glyphicon glyphicon-chevron-down"></span>\
+    <ul class="selectLista">\
+        <li class="selected">S</li>\
+        <li>ETF</li>\
+        <li>Medicina</li>\
+        <li>Farmacija</li>\
+        <li>PPF</li>\
+    </ul>\
+</a>\
+                                  <p class="error"><?php echo $fakultetErr; ?></p>\
+                        </div>\
+\
+                        <div class="form-group col-xs-12 col-md-3">\
+                            <label for="godinaStudija">\
+                                Godina studija*</label>\
+                                <a class=" listbox btn btn-info btn-select btn-select-light">\
+    <input type="hidden" class="btn-select-input" id="" name="godina' + i + '" value="" />\
+    <span class="btn-select-value">1.</span>\
+    <span class="btn-select-arrow glyphicon glyphicon-chevron-down"></span>\
+    <ul class="selectLista">\
+        <li class="selected">1.</li>\
+        <li>2.</li>\
+        <li>3.</li>\
+        <li>4.</li>\
+        <li>5.</li>\
+        <li>6.</li>\
+    </ul>\
+</a>\
+                                  <p class="error"><?php echo $godinaStudijaErr; ?></p>\
+                        </div>\
+\
+\
+                        <div class="form-group col-xs-12 col-md-6">\
+                            <label for="odsjek">\
+                                Odsjek</label>\
+                            <input type="text" class="form-control" id="odsjek0" name="odsjek' + i + '"  value="<?php echo $odsjek0;?>"/>\
+                        </div>\
+                          <div class="form-group col-xs-12 col-md-6">\
+                            \
+                            <input type="button" id= "' + i +'" class="form-control btn btnObrisi delete_row' + i  +'" value="Obriši fakultet"/>\
+                        </div>');
 
 
 
+
+      //$('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='sur"+i+"' type='text' placeholder='Surname'  class='form-control input-md'></td><td><input  name='email"+i+"' type='text' placeholder='Email'  class='form-control input-md'></td><td><select type='text' name='gender"+i+"' class='form-control'><option name='male"+i+"' value='male'>Male</option><option name='Female"+i+"' value='Female'>Female</option><option name='3rdgen"+i+"' value='none'>None</option></select></td>");
+
+      $('#sviFaksovi').append('<div id="addr' + (i+1) +'"></div>');
+      
+      $(".delete_row" + i).click(function(){
+        var Addrid = $(this).attr('id');
+         if(i>=1){
+         $("#addr"+(Addrid)).html('');
+         //i--;
+         }
+     });
+      i++; 
+  });
+     
+
+});
+
+
+ $(document).ready(function(){
+
+$('#radioBtn1 a').on('click', function(){
+    var sel = $(this).data('title');
+    var tog = $(this).data('toggle');
+    $('#'+tog).prop('value', sel);
+    
+    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+});
+
+$('#radioBtn2 a').on('click', function(){
+    var sel = $(this).data('title');
+    var tog = $(this).data('toggle');
+    $('#'+tog).prop('value', sel);
+    
+    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+});
+
+});

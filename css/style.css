@@ -614,6 +614,14 @@ html {
 
 }
 
+@media only screen and (min-width: 1500px) {
+    .title
+    {
+        height: 1000px;
+    }
+
+}
+
 .title-text-one {
     border-bottom: 1px solid white;
     padding: 0;

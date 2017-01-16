@@ -27,6 +27,7 @@
 	background-color: #bf302a;
 	border-color: #bf302a;
 	color: white;
+    margin-top: 30px;
 }
 
 .prethodni:hover, .sljedeci:hover
@@ -49,7 +50,7 @@
 	color: white !important;
 }
 
-.napomena
+.napomena, .podaciOFaxu
 {
 	font-family: 'Roboto';
 	color: #bf302a;
@@ -60,7 +61,7 @@
 .btn-select {
     position: relative;
     padding: 0;
-    min-width: 236px;
+    min-width: 36px;
     width: 100%;
     border-radius: 0;
     margin-bottom: 20px;
@@ -295,6 +296,72 @@ textarea
 {
 	resize:none;
 }
+
+.btnSlanje
+{
+    color: white;
+    background-color: #1AA79E;
+    font-family: 'Roboto';
+    border-color: #1aa79e;
+    height: 50px;
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+
+.btnSlanje:hover, .btnSlanje:focus, .btnSlanje:active
+{
+    background-color: #1AA79E;
+    border:none;
+    color:white;
+}
+
+.prviFakultet, .margina
+{
+    margin-right: 500px;
+}
+
+.btnObrisi
+{
+    background-color: #bf302a;
+    color: white;
+    margin-top: 25px;
+}
+
+#radioBtn1 a, #radioBtn2 a
+{
+    width: 40px;
+   
+}
+
+#radioBtn1 .notActive{
+    color: #1AA79E;
+    background-color: #fff;
+        border:none !important;
+
+}
+
+#radioBtn2 .notActive{
+    color: #1AA79E;
+    background-color: #fff;
+        border:none !important;
+
+}
+
+#radioBtn2 .active, #radioBtn1 .active
+{
+    background-color: #1AA79E !important;
+    border:none !important;
+}
+
+.podnaslov
+{
+    color: #bf302a !important;
+    font-size: 20px;
+}
+
+
 
 
 
