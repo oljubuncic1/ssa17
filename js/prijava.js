@@ -112,7 +112,7 @@ $(document).on('click', function (e) {
                             <label for="fakultet">\
                                 Fakultet*</label>\
                                 <a class=" listbox btn btn-info btn-select btn-select-light">\
-    <input type="hidden" class="btn-select-input" id="fax' + i +'" name="fakultet' + i + '" value="S" />\
+    <input type="hidden" class="btn-select-input" id="fakultet' + i +'" name="fakultet' + i + '" value="S" />\
     <span class="btn-select-value">S</span>\
     <span class="btn-select-arrow glyphicon glyphicon-chevron-down"></span>\
     <ul class="selectLista">\
@@ -123,14 +123,14 @@ $(document).on('click', function (e) {
         <li class="listItem">PPF</li>\
     </ul>\
 </a>\
-                                  <p class="error"><?php echo $fakultetErr; ?></p>\
+                                  <p class="error errorFakultet' + i +'"></p>\
                         </div>\
 \
                         <div class="form-group col-xs-12 col-md-3">\
                             <label for="godinaStudija">\
                                 Godina studija*</label>\
                                 <a class=" listbox btn btn-info btn-select btn-select-light">\
-    <input type="hidden" class="btn-select-input" id="" name="godina' + i + '" value="1." />\
+    <input type="hidden" class="btn-select-input" id="godina' + i +'" name="godina' + i + '" value="1." />\
     <span class="btn-select-value">1.</span>\
     <span class="btn-select-arrow glyphicon glyphicon-chevron-down"></span>\
     <ul class="selectLista">\
@@ -142,14 +142,15 @@ $(document).on('click', function (e) {
         <li class="listItem">6.</li>\
     </ul>\
 </a>\
-                                  <p class="error"><?php echo $godinaStudijaErr; ?></p>\
+                                  <p class="error errorGodina' + i +'"></p>\
                         </div>\
 \
 \
                         <div class="form-group col-xs-12 col-md-6">\
                             <label for="odsjek">\
                                 Odsjek</label>\
-                            <input type="text" class="form-control" id="odsjek0" name="odsjek' + i + '"  value="<?php echo $odsjek0;?>"/>\
+                            <input type="text" class="form-control" id="odsjek' + i +'" name="odsjek' + i + '"  />\
+                            <p class="error error' + i +'"></p>\
                         </div>\
                           <div class="form-group col-xs-12 col-md-6">\
                             \
@@ -206,4 +207,200 @@ $('.listItem').on('click', function(){
 
 
 
+
+
+
 });
+
+ $(document).ready(function(){
+
+
+ $("#prijavaForm").submit(function(e) {
+
+
+    var valid1 = true;
+    var valid3 = true;
+    var valid4 = true;
+
+    var valid = true;
+
+    //validacija polja
+
+    //korak1
+
+    //ime
+    if($('#ime').val() == '')
+    {
+        $('#errorIme').html('Molimo unesite Vaše ime.');
+        $('#ime').addClass('tbError');
+        valid1 = false;
+    }
+    else
+    {   
+        $('#errorIme').html('');
+        $('#ime').removeClass('tbError');
+    }
+
+    //prezime
+    if($('#prezime').val() == '')
+    {
+        $('#errorPrezime').html('Molimo unesite Vaše prezime.');
+        $('#prezime').addClass('tbError');
+        valid1 = false;
+    }
+    else
+    {   
+        $('#errorPrezime').html('');
+        $('#prezime').removeClass('tbError');
+    }
+
+    //datum
+    if($('#datum').val() == '')
+    {
+        $('#errorDatum').html('Molimo unesite Vaš datum rođenja.');
+        $('#datum').addClass('tbError');
+        valid1 = false;
+    }
+    else
+    {   
+        $('#errorDatum').html('');
+        $('#datum').removeClass('tbError');
+    }
+
+    //email
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if($('#email').val() == '')
+    {
+        $('#errorEmail').html('Molimo unesite Vašu email adresu.');
+        $('#email').addClass('tbError');
+        valid1 = false;
+    }
+
+    else if(regex.test($('#email').val()) == false)
+    {
+        $('#errorEmail').html('Molimo unesite validnu email adresu.');
+        $('#email').addClass('tbError');
+        valid1 = false;
+    }
+    
+    else
+    {   
+        $('#errorEmail').html('');
+        $('#email').removeClass('tbError');
+    }
+
+    //telefon
+    if($('#telefon').val() == '')
+    {
+        $('#errorTelefon').html('Molimo unesite Vaš broj telefona.');
+        $('#telefon').addClass('tbError');
+        valid1 = false;
+    }
+    else
+    {   
+        $('#errorTelefon').html('');
+        $('#telefon').removeClass('tbError');
+    }
+
+    //majica
+    var velicine = ["S", "M", "L", "XL", "XXL"];
+
+    if(velicine.indexOf($('#majica').val()) == -1) // ne nalazi se u nizu
+    {
+        $('#errorMajica').html('Molimo izaberite jednu od ponuđenih veličina.');
+        $('#majicaLista').addClass('tbError');
+        valid1 = false;
+    }
+    else
+    {   
+        $('#errorMajica').html('');
+        $('#majicaLista').removeClass('tbError');
+    }
+
+    // korak 2
+
+    // korak 3
+
+    if($('#pismo').val() == '')
+    {
+        $('#errorPismo').html('Molimo napišite Vaše motivaciono pismo.');
+        $('#pismo').addClass('tbError');
+        valid3 = false;
+    }
+    else
+    {   
+        $('#errorPismo').html('');
+        $('#pismo').removeClass('tbError');
+    }
+
+    // korak 4
+
+    // ranije ucesce
+
+    var dane = ["DA", "NE"];
+
+    if(dane.indexOf($('#ranije').val()) == -1) // ne nalazi se u nizu
+    {
+        $('#errorRanije').html('Molimo izaberite jednu od ponuđenih opcija.');
+        $('#ranijeLista').addClass('tbError');
+        valid4 = false;
+    }
+    else
+    {   
+        $('#errorRanije').html('');
+        $('#ranijeLista').removeClass('tbError');
+    }
+
+    // trenutno
+
+    if(dane.indexOf($('#trenutno').val()) == -1) // ne nalazi se u nizu
+    {
+        $('#errorTrenutno').html('Molimo izaberite jednu od ponuđenih opcija.');
+        //$('#ranijeLista').addClass('tbError');
+        valid4 = false;
+    }
+    else
+    {   
+        $('#errorTrenutno').html('');
+        //$('#ranijeLista').removeClass('tbError');
+    }
+
+    // kakostesaznali
+
+    var kako = ["Promocija na fakultetu", "Društvene mreže", "Mediji", "Web stranica", "Preporuka prijatelja", "Promotivni leci i plakati", "Ništa od navedenog"];
+
+    if(kako.indexOf($('#kakostesaznali').val()) == -1) // ne nalazi se u nizu
+    {
+        $('#errorKako').html('Molimo izaberite jednu od ponuđenih opcija.');
+        //$('#ranijeLista').addClass('tbError');
+        valid4 = false;
+    }
+    else
+    {   
+        $('#errorKako').html('');
+        //$('#ranijeLista').removeClass('tbError');
+    }
+
+    if(!valid1)
+        $('#korak1').addClass('korakError');
+    else
+        $('#korak1').removeClass('korakError');
+    
+    if(!valid3)
+        $('#korak3').addClass('korakError');
+    else
+        $('#korak3').removeClass('korakError');
+    if(!valid4)
+        $('#korak4').addClass('korakError');
+    else
+        $('#korak4').removeClass('korakError');
+
+    if(!valid1 || !valid3 || !valid4)
+        valid = false;
+
+
+    if(!valid)    
+    e.preventDefault();
+});
+
+ });

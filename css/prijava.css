@@ -38,16 +38,21 @@
 .koraci .active .korak, .koraci .active .korak:hover, .koraci .active .korak:focus
 {
 	background-color: #1AA79E;
+
+
 }
 
 .tekstKoraka
 {
 	color: #1AA79E;
+
+    
 }
 
 .koraci .active .korak .tekstKoraka
 {
 	color: white !important;
+
 }
 
 .napomena, .podaciOFaxu
@@ -66,6 +71,13 @@
     border-radius: 0;
     margin-bottom: 20px;
 }
+
+.prvaForma
+{
+    height: 100px !important;
+}
+
+
 
 .btn-select .btn-select-value {
     padding: 6px 12px;
@@ -364,6 +376,12 @@ textarea
 {
     color: #bf302a !important;
     font-size: 20px;
+    margin-top: 50px;
+}
+
+.korakError
+{
+    border: 2px solid red !important;
 }
 
 

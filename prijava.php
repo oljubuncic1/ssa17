@@ -27,6 +27,20 @@
 
 </head>
 
+<?php
+    
+
+    
+    
+    if($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['prijavaSubmit'])) {
+
+        echo "poslano";
+    }
+
+
+
+?>
+
 <body>
 
 <?php include 'partials/mainNavbar2.html'; ?>
@@ -39,31 +53,31 @@
             </div>
         </div>
 
-        <form name="prijavaForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <form name="prijavaForm" id="prijavaForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="row form-group">
             <div class="col-xs-12 col-md-4">
                 <ul class="nav nav-pills nav-stacked  thumbnail setup-panel koraci">
-                    <li class="active"><a class="korak" href="#step-1">
-                        <h4 class="list-group-item-heading tekstKoraka">Korak 1</h4>
+                    <li class="active"><a class="korak" href="#step-1" id="korak1">
+                        <h4 class="list-group-item-heading tekstKoraka ">Korak 1</h4>
                         <p class="list-group-item-text tekstKoraka">Osnovni podaci</p>
                     </a></li>
-                    <li ><a class="korak" href="#step-2">
+                    <li ><a class="korak" href="#step-2" id="korak2">
                         <h4 class="list-group-item-heading tekstKoraka">Korak 2</h4>
                         <p class="list-group-item-text tekstKoraka">Podaci o obrazovanju</p>
                     </a></li>
-                    <li ><a class="korak" href="#step-3">
+                    <li ><a class="korak" href="#step-3" id="korak3">
                         <h4 class="list-group-item-heading tekstKoraka">Korak 3</h4>
                         <p class="list-group-item-text tekstKoraka">Motivaciono pismo</p>
                     </a></li>
-                    <li><a class="korak" href="#step-4">
+                    <li><a class="korak" href="#step-4" id="korak4">
                         <h4 class="list-group-item-heading tekstKoraka">Korak 4</h4>
                         <p class="list-group-item-text tekstKoraka">Prethodno iskustvo</p>
                     </a></li> 
-                    <li ><a class="korak" href="#step-5">
+                    <li ><a class="korak" href="#step-5" id="korak5">
                         <h4 class="list-group-item-heading tekstKoraka">Korak 5</h4>
                         <p class="list-group-item-text tekstKoraka">Dodatne napomene</p>
                     </a></li> 
-                     <li ><a class="korak" href="#step-6">
+                     <li ><a class="korak" href="#step-6" id="korak6">
                         <h4 class="list-group-item-heading tekstKoraka">Korak 6</h4>
                         <p class="list-group-item-text tekstKoraka">Slanje prijave</p>
                     </a></li>    
@@ -77,36 +91,42 @@
                <!-- <p class="naslov1">Osnovni podaci</p> -->
              <p class="napomena"><i>Napomena: Polja označena sa * su obavezna.</i></p> 
 
-            <div class="form-group col-xs-12 col-md-6">
+            <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="ime">
                                 Ime*</label>
-                            <input type="text" class="form-control" id="ime" name="ime"  value="<?php echo $ime;?>"/>
+                            <input type="text" class="form-control" id="ime" name="ime" />
+                            <p class="error" id="errorIme"></p>
+
                         </div>
-                        <div class="form-group col-xs-12 col-md-6">
+                        <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="prezime">
                                 Prezime*</label>
-                            <input type="text" class="form-control" id="prezime" name="prezime"  value="<?php echo $prezime;?>"/>
+                            <input type="text" class="form-control" id="prezime" name="prezime" />
+                            <p class="error" id="errorPrezime"></p>
                         </div>
-                         <div class="form-group col-xs-12 col-md-6">
+                         <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="datum">
                                 Datum rođenja*</label>
-                            <input type="text" class="form-control" id="datum" name="datum"  value="<?php echo $datum;?>"/>
+                            <input type="text" class="form-control" id="datum" name="datum"  />
+                            <p class="error" id="errorDatum"></p>
                         </div>
-                          <div class="form-group col-xs-12 col-md-6">
+                          <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="telefon">
                                 Broj telefona*</label>
-                            <input type="text" class="form-control" id="telefon" name="telefon"  value="<?php echo $telefon;?>"/>
+                            <input type="text" class="form-control" id="telefon" name="telefon"  />
+                            <p class="error" id="errorTelefon"></p>
                         </div>
-                        <div class="form-group col-xs-12 col-md-6">
+                        <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="email">
                                 Email*</label>
-                            <input type="text" class="form-control <?php if($emailErr != '') echo tbError; else echo ''; ?>" id="email" name="email" value="<?php echo $email;?>"/>
-                            <p class="error"><?php echo $emailErr; ?></p>
+                            <input type="text" class="form-control" id="email" name="email" />
+
+                            <p class="error" id="errorEmail"></p>
                         </div>   
-                        <div class="form-group col-xs-12 col-md-6">
+                        <div class="form-group  prvaForma col-xs-12 col-md-6">
                             <label for="majica">
                                 Veličina majice*</label>
-                                <a class=" listbox btn btn-info btn-select btn-select-light">
+                                <a id="majicaLista" class=" listbox btn btn-info btn-select btn-select-light">
     <input type="hidden" class="btn-select-input" id="majica" name="majica" value="S" />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
@@ -118,7 +138,7 @@
         <li class="majica listItem">XXL</li>
     </ul>
 </a>
-                                  <p class="error"><?php echo $majicaErr; ?></p>
+                                  <p class="error" id="errorMajica"></p>
                         </div>           
                 
     
@@ -149,7 +169,7 @@
                             <label for="fakultet">
                                 Fakultet*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="fax" name="fakultet0" value="S" />
+    <input type="hidden" class="btn-select-input" id="fakultet0" name="fakultet0" value="S" />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
@@ -160,14 +180,14 @@
         <li class="listItem">PPF</li>
     </ul>
 </a>
-                                  <p class="error"><?php echo $fakultetErr; ?></p>
+                                  <p class="error" id="errorFakultet0"></p>
                         </div>
 
                         <div class="form-group col-xs-12 col-md-3">
                             <label for="godinaStudija">
                                 Godina studija*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="god" name="godina0" value="1." />
+    <input type="hidden" class="btn-select-input" id="godina0" name="godina0" value="1." />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
@@ -179,14 +199,15 @@
         <li class="listItem">6.</li>
     </ul>
 </a>
-                                  <p class="error"><?php echo $godinaStudijaErr; ?></p>
+                                  <p class="error" id="errorGodina0"></p>
                         </div>
 
 
                         <div class="form-group col-xs-12 col-md-6 prviFaks">
                             <label for="odsjek">
                                 Odsjek</label>
-                            <input type="text" class="form-control" id="odsjek0" name="odsjek0"  value="<?php echo $odsjek0;?>"/>
+                            <input type="text" class="form-control" id="odsjek0" name="odsjek0"  />
+                            <p class="error" id="errorOdsjek0"></p>
                         </div>
 
                         </div>
@@ -220,6 +241,7 @@
                         <a class="btn btn-primary btn-sm notActive" data-toggle="govor" data-title="5">5</a>
 
                     </div>
+                    <p class="error" id="errorGovor"></p>
                     <input type="hidden" name="govor" id="govor">
                                       </div>
 
@@ -235,6 +257,7 @@
                         <a class="btn btn-primary btn-sm notActive" data-toggle="raz" data-title="5">5</a>
 
                     </div>
+                    <p class="error" id="errorRaz"></p>
                     <input type="hidden" name="raz" id="raz">
                                       </div>
 
@@ -265,9 +288,9 @@
  <div class="form-group col-xs-12">
                             <label for="pismo">
                                 Motivaciono pismo*</label>
-                            <textarea name="pismo" id="pismo" class="form-control <?php if($mesErr != '') echo tbError; else echo ''; ?>" rows="12" cols="25"
-                                ><?php echo $pismo;?></textarea>
-                                <p class="error"><?php echo $pismoErr; ?></p>
+                            <textarea name="pismo" id="pismo" class="form-control" rows="12" cols="25"
+                                ></textarea>
+                                <p class="error" id="errorPismo"></p>
                         </div>             
                 
     
@@ -291,8 +314,8 @@
 <div class="form-group col-xs-12 col-md-4 margina">
                             <label for="ranijeUcesce">
                                 Ranije učešće na SSA*</label>
-                                <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="" name="ranije" value="NE" />
+                                <a id = "ranijeLista" class=" listbox btn btn-info btn-select btn-select-light">
+    <input type="hidden" class="btn-select-input" id="ranije" name="ranije" value="NE" />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
@@ -300,15 +323,41 @@
         <li class="listItem">DA</li>
     </ul>
 </a>
-                                  <p class="error"><?php echo $ranijeErr; ?></p>
-                        </div>  
+                                  <p class="error" id="errorRanije"></p>
+                        </div> 
+
+                        <div class="form-group col-xs-12 col-md-4 margina">
+                            <label for="kakostesaznali">
+                                Kako ste saznali za SSA*</label>
+                                <a class=" listbox btn btn-info btn-select btn-select-light">
+    <input type="hidden" class="btn-select-input" id="kakostesaznali" name="kakostesaznali" value="Promocija na fakultetu" />
+    <span class="btn-select-value">Select an Item</span>
+    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+    <ul class="selectLista">
+        <li class="selected listItem">Promocija na fakultetu</li>
+        <li class="listItem">Društvene mreže</li>
+        <li class="listItem">Mediji</li>
+        <li class="listItem">Web stranica</li>
+                <li class="listItem">Preporuka prijatelja</li>
+                <li class="listItem">Promotivni leci i plakati</li>
+            <li class="listItem">Ništa od navedenog</li>
+
+
+
+
+
+
+    </ul>
+</a>
+                                  <p class="error" id="errorKako"></p>
+                        </div> 
 
                         <div class="form-group col-xs-12">
                             <label for="radno">
                                 Radno iskustvo</label>
-                            <textarea name="radno" id="radno" class="form-control <?php if($radnoErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
-                                ><?php echo $radno;?></textarea>
-                                <p class="error"><?php echo $radnoErr; ?></p>
+                            <textarea name="radno" id="radno" class="form-control" rows="9" cols="25"
+                                ></textarea>
+                                <p class="error" id="errorRadno"></p>
                         </div>  
 
 
@@ -316,7 +365,7 @@
                             <label for="trenutno">
                                 Trenutno zaposlenje*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="" name="trenutno" value="NE" />
+    <input type="hidden" class="btn-select-input" id="trenutno" name="trenutno" value="NE" />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
@@ -324,33 +373,33 @@
         <li class="listItem">DA</li>
     </ul>
 </a>
-                                  <p class="error"><?php echo $trenutnoErr; ?></p>
+                                  <p class="error" id="errorTrenutno"></p>
                         </div>  
 
 
                         <div class="form-group col-xs-12">
                             <label for="softUcesce">
                                 Učešće na soft skills treninzima</label>
-                            <textarea name="softUcesce" id="softUcesce" class="form-control <?php if($softUcesceErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
-                                ><?php echo $softUcesce;?></textarea>
-                                <p class="error"><?php echo $softUcesceErr; ?></p>
+                            <textarea name="softUcesce" id="softUcesce" class="form-control" rows="9" cols="25"
+                                ></textarea>
+                                <p class="error" id="errorUcesce"></p>
                         </div> 
 
 
                         <div class="form-group col-xs-12">
                             <label for="seminari">
                                 Učešće na seminarima</label>
-                            <textarea name="seminari" id="seminari" class="form-control <?php if($seminariErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
-                                ><?php echo $seminari;?></textarea>
-                                <p class="error"><?php echo $seminariErr; ?></p>
+                            <textarea name="seminari" id="seminari" class="form-control" rows="9" cols="25"
+                                ></textarea>
+                                <p class="error" id="errorSeminari"></p>
                         </div>  
 
                         <div class="form-group col-xs-12">
                             <label for="nvo">
                                 Iskustvo u NVO</label>
-                            <textarea name="nvo" id="nvo" class="form-control <?php if($nvoErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
-                                ><?php echo $nvo;?></textarea>
-                                <p class="error"><?php echo $nvoErr; ?></p>
+                            <textarea name="nvo" id="nvo" class="form-control" rows="9" cols="25"
+                                ></textarea>
+                                <p class="error" id="errorNvo"></p>
                         </div>      
                 
     
@@ -374,9 +423,9 @@
  <div class="form-group col-xs-12">
                             <label for="pismo">
                                 Dodatne napomene</label>
-                            <textarea name="dodatne" id="dodatne" class="form-control <?php if($dodatneErr != '') echo tbError; else echo ''; ?>" rows="9" cols="25"
-                                ><?php echo $dodatne;?></textarea>
-                                <p class="error"><?php echo $dodatneErr; ?></p>
+                            <textarea name="dodatne" id="dodatne" class="form-control" rows="9" cols="25"
+                                ></textarea>
+                                <p class="error" id="errorDodatne"></p>
                         </div>             
                 
     
