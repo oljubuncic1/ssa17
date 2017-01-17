@@ -69,8 +69,9 @@ CREATE TABLE IF NOT EXISTS `participant` (
   `ime` VARCHAR(45) NULL,
   `prezime` VARCHAR(45) NULL,
   `broj_telefona` VARCHAR(45) NULL,
-  `datum_rodjenja` DATE NULL,
+  `datum_rodjenja` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
+  `velicina_majice` VARCHAR(10) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
@@ -109,18 +110,6 @@ COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
--- Table `nacin_ishrane`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `nacin_ishrane` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `vrsta` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
-
-
--- -----------------------------------------------------
 -- Table `prijava`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `prijava` (
@@ -128,23 +117,16 @@ CREATE TABLE IF NOT EXISTS `prijava` (
   `motivaciono_pismo` TEXT NULL,
   `ss_iskustvo` TEXT NULL,
   `seminari_iskustvo` TEXT NULL,
-  `nv_iskustvo` TEXT NULL,
-  `hobiji` TEXT NULL,
+  `nvo_iskustvo` TEXT NULL,
   `napomene` TEXT NULL,
   `ranije_ucesce` TINYINT(1) NULL,
+  `radno_iskustvo` TEXT NULL,
   `participant_id` INT NOT NULL,
-  `nacin_ishrane_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_prijava_participant1_idx` (`participant_id` ASC),
-  INDEX `fk_prijava_nacin_ishrane1_idx` (`nacin_ishrane_id` ASC),
   CONSTRAINT `fk_prijava_participant1`
     FOREIGN KEY (`participant_id`)
     REFERENCES `participant` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_prijava_nacin_ishrane1`
-    FOREIGN KEY (`nacin_ishrane_id`)
-    REFERENCES `nacin_ishrane` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -171,40 +153,6 @@ CREATE TABLE IF NOT EXISTS `jezik` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `naziv` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
-
-
--- -----------------------------------------------------
--- Table `vrsta_iskustva`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `vrsta_iskustva` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `vrsta` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
-
-
--- -----------------------------------------------------
--- Table `radno_iskustvo`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `radno_iskustvo` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `opis` TEXT NULL,
-  `datum_od` DATE NULL,
-  `datum_do` DATE NULL,
-  `trenutno` TINYINT(1) NULL,
-  `vrsta_iskustva_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_radno_iskustvo_vrsta_iskustva1_idx` (`vrsta_iskustva_id` ASC),
-  CONSTRAINT `fk_radno_iskustvo_vrsta_iskustva1`
-    FOREIGN KEY (`vrsta_iskustva_id`)
-    REFERENCES `vrsta_iskustva` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
@@ -242,7 +190,6 @@ CREATE TABLE IF NOT EXISTS `participant_has_fakultet` (
   `fakultet_id` INT NOT NULL,
   `odsjek` VARCHAR(45) NULL,
   `godina_studija` INT NULL,
-  `prosjek` DOUBLE NULL,
   PRIMARY KEY (`participant_id`, `fakultet_id`),
   INDEX `fk_participant_has_fakultet_fakultet1_idx` (`fakultet_id` ASC),
   INDEX `fk_participant_has_fakultet_participant1_idx` (`participant_id` ASC),
@@ -267,8 +214,7 @@ COLLATE = utf8_general_ci;
 CREATE TABLE IF NOT EXISTS `participant_has_jezik` (
   `participant_id` INT NOT NULL,
   `jezik_id` INT NOT NULL,
-  `citanje` INT NULL,
-  `pisanje` INT NULL,
+  `razumijevanje` INT NULL,
   `govor` INT NULL,
   PRIMARY KEY (`participant_id`, `jezik_id`),
   INDEX `fk_participant_has_jezik_jezik1_idx` (`jezik_id` ASC),
@@ -281,30 +227,6 @@ CREATE TABLE IF NOT EXISTS `participant_has_jezik` (
   CONSTRAINT `fk_participant_has_jezik_jezik1`
     FOREIGN KEY (`jezik_id`)
     REFERENCES `jezik` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_general_ci;
-
-
--- -----------------------------------------------------
--- Table `participant_has_radno_iskustvo`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `participant_has_radno_iskustvo` (
-  `participant_id` INT NOT NULL,
-  `radno_iskustvo_id` INT NOT NULL,
-  PRIMARY KEY (`participant_id`, `radno_iskustvo_id`),
-  INDEX `fk_participant_has_radno_iskustvo_radno_iskustvo1_idx` (`radno_iskustvo_id` ASC),
-  INDEX `fk_participant_has_radno_iskustvo_participant1_idx` (`participant_id` ASC),
-  CONSTRAINT `fk_participant_has_radno_iskustvo_participant1`
-    FOREIGN KEY (`participant_id`)
-    REFERENCES `participant` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_participant_has_radno_iskustvo_radno_iskustvo1`
-    FOREIGN KEY (`radno_iskustvo_id`)
-    REFERENCES `radno_iskustvo` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
