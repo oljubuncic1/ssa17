@@ -69,7 +69,7 @@
 
         if(isset($_POST['poruka']) and $_POST['poruka'] != '')
         {
-           $poruka = $_POST['poruka'];
+           $poruka = htmlspecialchars($_POST['poruka']);
             $mesErr = "";
         }
         else
@@ -134,7 +134,7 @@
     <div class="row">
         <div class="col-md-offset-1 col-md-4">
             <div>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">

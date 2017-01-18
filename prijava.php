@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <title>Soft Skills Academy Sarajevo '17</title>
@@ -30,12 +30,353 @@
 <?php
     
 
+    header('Content-Type: text/html; charset=utf-8');
     
-    
-    if($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['prijavaSubmit'])) {
+    if($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['prijavaSubmit']))
 
-        echo "poslano";
+     {
+
+        //echo "poslano";
+        // validacija
+            include("php/config.php");
+
+        $valid = true;
+
+
+        // korak 1
+
+        $ime = NULL;
+        $prezime = NULL;
+        $datum = NULL;
+        $telefon = NULL;
+        $email = NULL;
+        $majica = NULL;
+
+        if(isset($_POST['ime']) and $_POST['ime'] != '')
+            $ime = htmlspecialchars($_POST['ime']);
+        else
+            $valid = false;
+
+
+        
+
+
+        if(isset($_POST['prezime']) and $_POST['prezime'] != '')
+            $prezime = htmlspecialchars($_POST['prezime']);
+        else
+            $valid = false;
+
+        if(isset($_POST['datum']) and $_POST['datum'] != '')
+            $datum = htmlspecialchars($_POST['datum']);
+        else
+            $valid = false;
+
+        if(isset($_POST['telefon']) and $_POST['telefon'] != '')
+            $telefon = htmlspecialchars($_POST['telefon']);
+        else
+            $valid = false;
+
+        if(isset($_POST['email']) and $_POST['email'] != '')
+        {
+
+            $email = htmlspecialchars($_POST['email']);
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+                $valid = false;
+        }
+        else
+            $valid = false;
+
+
+
+        $velicine = array('S', 'M', 'L', 'XL', 'XXL');
+
+        if(isset($_POST['majica']) and $_POST['majica'] != '')
+        {
+            $majica = htmlspecialchars($_POST['majica']);
+            if(!in_array($majica, $velicine))
+                $valid = false;
+
+        }
+        else
+            $valid = false;
+
+
+
+        // korak 2
+
+        $fakulteti = array();
+        $godine = array();
+        $odsjeci = array();
+
+        foreach ($_POST as $key => $value)
+        {
+            if (strpos($key, 'fakultet') !== false)
+                array_push($fakulteti, htmlspecialchars($value));
+            else if(strpos($key, 'godina') !== false)
+                array_push($godine, htmlspecialchars($value));
+            else if(strpos($key, 'odsjek') !== false)
+                { 
+                  if($value != '')
+                array_push($odsjeci, htmlspecialchars($value));
+                else
+                array_push($odsjeci, NULL);
+
+                }
+
+        }
+
+        sort($fakulteti);
+        sort($godine);
+        sort($odsjeci);
+
+        
+
+
+        $dozvoljeniFakulteti = array('S'); // dodati faksove
+        $idFakulteta = array();
+        /*$query = "SELECT id, naziv FROM fakultet";
+        $stmt = $db->stmt_init();
+        if(!$stmt->prepare($query))
+        {
+            print "Greška u konekciji sa bazom podataka.\n";
+        }
+        else
+
+        {
+            $stmt->execute();
+            $stmt->bind_result($col0, $col1);
+
+            while ($stmt->fetch())
+                array_push($dozvoljeniFakulteti, $col1);
+                array_push($idFakulteta, $col0);
+
+        }*/
+        $dozvoljeneGodine = array('1.', '2.', '3.', '4.', '5.', '6.');
+
+        if(count($fakulteti) != count($godine) || count($fakulteti) != count($odsjeci) || count($godine) != count($odsjeci))
+            $valid = false;
+
+        if(count($fakulteti) <= 0)
+            $valid = false;
+
+        if($valid)
+        {
+            for($i=0;$i < count($fakulteti); $i++)
+            {
+                if(!in_array($fakulteti[$i], $dozvoljeniFakulteti))
+                    $valid = false;
+                if(!in_array($godine[$i], $dozvoljeneGodine))
+                    $valid = false;
+            }
+        }
+
+
+
+
+        $govor = NULL;
+        $raz = NULL;
+
+        $jezik = array('1', '2', '3', '4', '5');
+
+        if(isset($_POST['govor']) and $_POST['govor'] != '')
+        {
+            
+            $govor = htmlspecialchars($_POST['govor']);
+            if(!in_array($govor, $jezik))
+            {
+                $valid = false;
+                
+            }
+
+        }
+        else
+            $valid = false;
+
+        if(isset($_POST['raz']) and $_POST['raz'] != '')
+        {
+            $raz = htmlspecialchars($_POST['raz']);
+            if(!in_array($raz, $jezik))
+            {
+                $valid = false;
+            }
+
+        }
+        else
+            $valid = false;
+
+        
+
+        // korak 3
+
+        $pismo = NULL;
+
+        if(isset($_POST['pismo']) and $_POST['pismo'] != '')
+            $pismo = htmlspecialchars($_POST['pismo']);
+        else
+            $valid = false;
+
+
+        // korak 4
+
+        $ranije = NULL;
+        $trenutno = NULL;
+        $kako = NULL;
+
+        $dane = array('DA', 'NE');
+
+        if(isset($_POST['ranije']) and $_POST['ranije'] != '')
+        {
+            $ranije = htmlspecialchars($_POST['ranije']);
+            if(!in_array($ranije, $dane))
+                $valid = false;
+
+        }
+        else
+            $valid = false;
+
+        if(isset($_POST['trenutno']) and $_POST['trenutno'] != '')
+        {
+            $trenutno = htmlspecialchars($_POST['trenutno']);
+            if(!in_array($trenutno, $dane))
+                $valid = false;
+
+        }
+        else
+            $valid = false;
+
+        $kakoniz = array("Promocija na fakultetu", "Društvene mreže", "Mediji", "Web stranica", "Preporuka prijatelja", "Promotivni leci i plakati", "Ništa od navedenog");
+
+
+        if(isset($_POST['kakostesaznali']) and $_POST['kakostesaznali'] != '')
+        {
+            $kako = htmlspecialchars($_POST['kakostesaznali']);
+            if(!in_array($kako, $kakoniz))
+                $valid = false;
+
+        }
+        else
+            $valid = false;
+
+        $radno = NULL;
+        $seminari = NULL;
+        $nvo = NULL;
+        $softUcesce = NULL;
+
+        if(isset($_POST['radno']))
+        {
+            if($_POST['radno'] != '') 
+                $radno = htmlspecialchars($_POST['radno']);
+        }
+        else
+            $valid = false;
+
+        if(isset($_POST['seminari']))
+        {   
+            if($_POST['seminari'] != '') 
+            $seminari = htmlspecialchars($_POST['seminari']);
+        }
+
+        else
+            $valid = false;
+
+        if(isset($_POST['nvo']))
+        {
+            if($_POST['nvo'] != '') 
+            $nvo = htmlspecialchars($_POST['nvo']);
+        }
+        else
+            $valid = false;
+
+        if(isset($_POST['softUcesce']))
+        {
+            if($_POST['softUcesce'] != '') 
+            $softUcesce = htmlspecialchars($_POST['softUcesce']);
+        }
+        else
+            $valid = false;
+
+
+        // korak 5
+        $dodatne = NULL;
+
+        if(isset($_POST['dodatne']))
+        {
+            if($_POST['dodatne'] != '') 
+            $dodatne = htmlspecialchars($_POST['dodatne']);
+        }
+        else
+            $valid = false;
+
+    if($valid)
+    {
+            
+            //dodavanje u bazu
+
+            // participant
+
+            $query = "INSERT INTO participant (ime, prezime, broj_telefona, datum_rodjenja, email, velicina_majice) VALUES(?, ?, ?, ?, ?, ?)";
+            $stmt = $db->stmt_init();
+            if(!$stmt->prepare($query))
+            {
+                print "Failed to prepare statement\n";
+            }
+            else
+
+            {
+
+                $stmt->bind_param("ssssss", $ime, $prezime, $datum, $telefon, $email, $majica);
+                $stmt->execute();
+                $participant_id = $db->insert_id;
+
+            }
+
+            // prijava
+
+            $query = "INSERT INTO prijava (motivaciono_pismo, ss_iskustvo, seminari_iskustvo, nvo_iskustvo, napomene, ranije_ucesce, radno_iskustvo, trenutno_zaposlenje, participant_id, kako_id) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $db->stmt_init();
+            if(!$stmt->prepare($query))
+            {
+                print "Failed to prepare statement\n";
+            }
+            else
+
+            {
+                if($ranije == 'DA')
+                    $ranijeInt = 1;
+                else
+                    $ranijeInt = 0;
+
+                if($trenutno == 'DA')
+                    $trenutnoInt = 1;
+                else
+                    $trenutnoInt = 0;
+                $kakoId = array_search($kako, $kakoniz); // ma ev dobro
+
+                $stmt->bind_param("sssssisiii", $pismo, $softUcesce, $seminari, $nvo, $dodatne, $ranijeInt, $radno, $trenutnoInt, $participant_id, $kakoId);
+                $stmt->execute();
+                $prijava_id = $db->insert_id;
+
+            }
+
+
+
+            
+
+
+
+
+
+
+
     }
+
+        
+
+
+
+    }
+
+
 
 
 
@@ -53,7 +394,7 @@
             </div>
         </div>
 
-        <form name="prijavaForm" id="prijavaForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <form name="prijavaForm" id="prijavaForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
         <div class="row form-group">
             <div class="col-xs-12 col-md-4">
                 <ul class="nav nav-pills nav-stacked  thumbnail setup-panel koraci">
@@ -242,7 +583,7 @@
 
                     </div>
                     <p class="error" id="errorGovor"></p>
-                    <input type="hidden" name="govor" id="govor">
+                    <input type="hidden" name="govor" id="govor" value="1">
                                       </div>
 
                          <div class="form-group col-xs-12 col-md-6">
@@ -258,7 +599,7 @@
 
                     </div>
                     <p class="error" id="errorRaz"></p>
-                    <input type="hidden" name="raz" id="raz">
+                    <input type="hidden" name="raz" id="raz" value="1">
                                       </div>
 
                     
