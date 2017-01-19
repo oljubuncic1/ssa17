@@ -31,16 +31,21 @@
     
 
     header('Content-Type: text/html; charset=utf-8');
+
+    $valid = true;
+    $message = '';
+
     
     if($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['prijavaSubmit']))
 
      {
+        $valid = true;
+    $message = '';
 
         //echo "poslano";
         // validacija
             include("php/config.php");
 
-        $valid = true;
 
 
         // korak 1
@@ -55,7 +60,11 @@
         if(isset($_POST['ime']) and $_POST['ime'] != '')
             $ime = htmlspecialchars($_POST['ime']);
         else
+        {
             $valid = false;
+            $message = 'Molimo unesite ispravno sva polja';
+
+        }
 
 
         
@@ -63,28 +72,43 @@
 
         if(isset($_POST['prezime']) and $_POST['prezime'] != '')
             $prezime = htmlspecialchars($_POST['prezime']);
-        else
+         else
+        {
             $valid = false;
+            $message = 'Molimo unesite ispravno sva polja';
+        }
 
         if(isset($_POST['datum']) and $_POST['datum'] != '')
             $datum = htmlspecialchars($_POST['datum']);
-        else
+         else
+        {
             $valid = false;
+            $message = 'Molimo unesite ispravno sva polja';
+        }
 
         if(isset($_POST['telefon']) and $_POST['telefon'] != '')
             $telefon = htmlspecialchars($_POST['telefon']);
-        else
+         else
+        {
             $valid = false;
+            $message = 'Molimo unesite ispravno sva polja';
+        }
 
         if(isset($_POST['email']) and $_POST['email'] != '')
         {
 
             $email = htmlspecialchars($_POST['email']);
             if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-                $valid = false;
+                {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
         }
         else
+           {
             $valid = false;
+            $message = 'Molimo unesite ispravno sva polja';
+        }
 
 
 
@@ -94,11 +118,17 @@
         {
             $majica = htmlspecialchars($_POST['majica']);
             if(!in_array($majica, $velicine))
-                $valid = false;
+                {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         }
         else
+        {
             $valid = false;
+            $message = 'Molimo unesite ispravno sva polja';
+        }
 
 
 
@@ -125,15 +155,15 @@
 
         }
 
-        sort($fakulteti);
-        sort($godine);
-        sort($odsjeci);
+        //sort($fakulteti);
+        //sort($godine);
+        //sort($odsjeci);
 
         
 
 
-        $dozvoljeniFakulteti = array('S'); // dodati faksove
-        $idFakulteta = array();
+        $dozvoljeniFakulteti = array('Elektrotehnički fakultet', 'S'); // dodati faksove
+        $idFakulteta = array(1, 3);
         /*$query = "SELECT id, naziv FROM fakultet";
         $stmt = $db->stmt_init();
         if(!$stmt->prepare($query))
@@ -154,21 +184,34 @@
         $dozvoljeneGodine = array('1.', '2.', '3.', '4.', '5.', '6.');
 
         if(count($fakulteti) != count($godine) || count($fakulteti) != count($odsjeci) || count($godine) != count($odsjeci))
-            $valid = false;
+                {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         if(count($fakulteti) <= 0)
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
-        if($valid)
-        {
+       
             for($i=0;$i < count($fakulteti); $i++)
             {
                 if(!in_array($fakulteti[$i], $dozvoljeniFakulteti))
+                    {
                     $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
+
                 if(!in_array($godine[$i], $dozvoljeneGodine))
+                    {
                     $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                    }
+
             }
-        }
+        
 
 
 
@@ -184,25 +227,32 @@
             $govor = htmlspecialchars($_POST['govor']);
             if(!in_array($govor, $jezik))
             {
-                $valid = false;
-                
-            }
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         }
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         if(isset($_POST['raz']) and $_POST['raz'] != '')
         {
             $raz = htmlspecialchars($_POST['raz']);
             if(!in_array($raz, $jezik))
             {
-                $valid = false;
-            }
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         }
         else
-            $valid = false;
+           {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         
 
@@ -213,7 +263,10 @@
         if(isset($_POST['pismo']) and $_POST['pismo'] != '')
             $pismo = htmlspecialchars($_POST['pismo']);
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
 
         // korak 4
@@ -228,21 +281,33 @@
         {
             $ranije = htmlspecialchars($_POST['ranije']);
             if(!in_array($ranije, $dane))
-                $valid = false;
+                {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         }
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         if(isset($_POST['trenutno']) and $_POST['trenutno'] != '')
         {
             $trenutno = htmlspecialchars($_POST['trenutno']);
             if(!in_array($trenutno, $dane))
-                $valid = false;
+                {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         }
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         $kakoniz = array("Promocija na fakultetu", "Društvene mreže", "Mediji", "Web stranica", "Preporuka prijatelja", "Promotivni leci i plakati", "Ništa od navedenog");
 
@@ -251,11 +316,17 @@
         {
             $kako = htmlspecialchars($_POST['kakostesaznali']);
             if(!in_array($kako, $kakoniz))
-                $valid = false;
+                {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         }
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         $radno = NULL;
         $seminari = NULL;
@@ -268,7 +339,10 @@
                 $radno = htmlspecialchars($_POST['radno']);
         }
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         if(isset($_POST['seminari']))
         {   
@@ -277,7 +351,10 @@
         }
 
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         if(isset($_POST['nvo']))
         {
@@ -285,7 +362,10 @@
             $nvo = htmlspecialchars($_POST['nvo']);
         }
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
         if(isset($_POST['softUcesce']))
         {
@@ -293,7 +373,10 @@
             $softUcesce = htmlspecialchars($_POST['softUcesce']);
         }
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
 
         // korak 5
@@ -305,11 +388,40 @@
             $dodatne = htmlspecialchars($_POST['dodatne']);
         }
         else
-            $valid = false;
+            {
+                    $valid = false;
+                    $message = 'Molimo unesite ispravno sva polja';
+                }
 
-    if($valid)
-    {
+   
+
+
+            //provjera da li vec postoji taj mail
+
+            $query = "SELECT email FROM participant";
+        $stmt = $db->stmt_init();
+        if(!$stmt->prepare($query))
+        {
+            print "Greška u konekciji sa bazom podataka.\n";
+        }
+        else
+
+        {
+            $stmt->execute();
+            $stmt->bind_result($col0);
+
+            while ($stmt->fetch())
+                if($email == $col0)
+                {
+                    $valid = false;
+                    $message = "Već postoji prijava sa navedenim emailom.";
+                }
+
+        }
             
+
+         if($valid)
+        {
             //dodavanje u bazu
 
             // participant
@@ -350,7 +462,7 @@
                     $trenutnoInt = 1;
                 else
                     $trenutnoInt = 0;
-                $kakoId = array_search($kako, $kakoniz); // ma ev dobro
+                $kakoId = array_search($kako, $kakoniz) + 1; // ma ev dobro
 
                 $stmt->bind_param("sssssisiii", $pismo, $softUcesce, $seminari, $nvo, $dodatne, $ranijeInt, $radno, $trenutnoInt, $participant_id, $kakoId);
                 $stmt->execute();
@@ -358,14 +470,71 @@
 
             }
 
+            for($i=0;$i < count($fakulteti); $i++)
+            {
+                $index = array_search($fakulteti[$i], $dozvoljeniFakulteti);
+                $faxId = $idFakulteta[$index];
 
+                $query = "INSERT INTO participant_has_fakultet (participant_id, fakultet_id, odsjek, godina_studija) VALUES(?, ?, ?, ?)";
+                $stmt = $db->stmt_init();
+                if(!$stmt->prepare($query))
+                {
+                    print "Failed to prepare statement\n";
+                }
+                else
+
+                {
+                    $godinaInt = ord($godine[$i][0]) - 48;
+
+                    $stmt->bind_param("iisi", $participant_id, $faxId, $odsjeci[$i], $godinaInt);
+                    $stmt->execute();
+
+                }
+
+            }
+
+            $query = "INSERT INTO participant_has_jezik (participant_id, jezik_id, razumijevanje, govor) VALUES(?, ?, ?, ?)";
+                $stmt = $db->stmt_init();
+                if(!$stmt->prepare($query))
+                {
+                    print "Failed to prepare statement\n";
+                }
+                else
+
+                {
+
+                    $razInt = ord($raz) - 48;
+                    $govorInt = ord($govor) - 48;
+                    $jezikId = 1;
+                    //hardcodirano samo za engleski jezik, ali je u bazi modularno za prosirenja
+
+                    $stmt->bind_param("iiii", $participant_id, $jezikId, $razInt, $govorInt);
+                    $stmt->execute();
+
+                }
+
+                // slanje maila potvrde participantu
+
+                
+
+                $subject = '[SSA] Potvrda prijave';
+                $eol = PHP_EOL;
+
+            $mes = '<html><body>';
+            $mes .= 'Vaša prijava je zabilježena i spremljena u našu bazu podataka. Nakon zatvaranja prijava bit ćete obaviješteni o ishodu.\n\n Sretno!';
+            $mes .= '</body></html>';
+
+            $headers = 'From: softskillsacademy.ba <noreply@softskillsacademy.ba> ' . "\r\n" .
+                            'Reply-To: softskillsacademy.ba <noreply@softskillsacademy.ba>' . "\r\n" .
+                            'X-Mailer: PHP/' . phpversion();
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=\"UTF-8\"".$eol;
+            $headers .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
 
             
+                mail($email, $subject, $mes, $headers);
 
-
-
-
-
+                $message = 'Vaša prijava je uspješno poslana. Uskoro biste trebali dobiti email sa potvrdom prijave. Ukoliko ne dobijete email molimo Vas da nas kontaktirate. Sretno!';
 
 
     }
@@ -391,6 +560,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <p class="naslov">Prijavi se - Budi korak ispred!</p>
+                <p class="<?php if(!$valid) echo errorMessage; else echo confMessage; ?>"><?php echo $message; ?></p>         
+
             </div>
         </div>
 
@@ -787,7 +958,8 @@
 
  <div class="form-group col-xs-12">
                            <input type="submit" name="prijavaSubmit" value="Pošalji prijavu" class="btnSlanje col-xs-12  btn">
-                        </div>             
+                        </div>    
+
                 
     
         <a class="btn pull-left prethodni">Prethodni korak</a>

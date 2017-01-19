@@ -98,6 +98,16 @@ address
 	text-align: center;
 }
 
+.errorMessage
+{
+	color: red;
+	font-size: 12pt;
+	font-family: Helvetica;
+	margin-top: 15px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
 .tbError
 {
 	border-color: red;

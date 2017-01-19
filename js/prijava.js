@@ -212,7 +212,7 @@ $('.listItem').on('click', function(){
 
 });
 
- /*$(document).ready(function(){
+ $(document).ready(function(){
 
 
  $("#prijavaForm").submit(function(e) {
@@ -403,4 +403,4 @@ $('.listItem').on('click', function(){
     e.preventDefault();
 });
 
- }); */
+ }); 
