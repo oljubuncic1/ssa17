@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/login.css">
+        <link rel="shortcut icon" type="image/jpg" href="img/favicon.png"/>
+
 
 </head>
 

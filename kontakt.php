@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/kontakt.css">
 
+        <link rel="shortcut icon" type="image/jpg" href="img/favicon.png"/>
+
+
      <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="js/script.js"></script>

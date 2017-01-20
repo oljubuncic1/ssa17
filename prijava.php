@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="css/kontakt.css">
     <link rel="stylesheet" href="css/prijava.css">
 
+        <link rel="shortcut icon" type="image/jpg" href="img/favicon.png"/>
+
+
      <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="js/prijava.js"></script>
@@ -30,10 +33,32 @@
 <?php
     
 
-    header('Content-Type: text/html; charset=utf-8');
-
+    //header('Content-Type: text/html; charset=utf-8');
+    
+    include("php/config.php");
     $valid = true;
     $message = '';
+    $dozvoljeniFakulteti = array();
+    $idFakulteta = array();
+        $query = "SELECT id, naziv FROM fakultet ORDER BY naziv";
+        $stmt = $db->stmt_init();
+        if(!$stmt->prepare($query))
+        {
+            print "Greška u konekciji sa bazom podataka.\n";
+        }
+        else
+
+        {
+            $stmt->execute();
+            $stmt->bind_result($col0, $col1);
+
+            while ($stmt->fetch())
+            {
+                array_push($dozvoljeniFakulteti, $col1);
+                array_push($idFakulteta, $col0);
+            }
+
+        }
 
     
     if($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['prijavaSubmit']))
@@ -44,7 +69,7 @@
 
         //echo "poslano";
         // validacija
-            include("php/config.php");
+            
 
 
 
@@ -162,25 +187,8 @@
         
 
 
-        $dozvoljeniFakulteti = array('Elektrotehnički fakultet', 'S'); // dodati faksove
-        $idFakulteta = array(1, 3);
-        /*$query = "SELECT id, naziv FROM fakultet";
-        $stmt = $db->stmt_init();
-        if(!$stmt->prepare($query))
-        {
-            print "Greška u konekciji sa bazom podataka.\n";
-        }
-        else
-
-        {
-            $stmt->execute();
-            $stmt->bind_result($col0, $col1);
-
-            while ($stmt->fetch())
-                array_push($dozvoljeniFakulteti, $col1);
-                array_push($idFakulteta, $col0);
-
-        }*/
+         
+        
         $dozvoljeneGodine = array('1.', '2.', '3.', '4.', '5.', '6.');
 
         if(count($fakulteti) != count($godine) || count($fakulteti) != count($odsjeci) || count($godine) != count($odsjeci))
@@ -681,15 +689,15 @@
                             <label for="fakultet">
                                 Fakultet*</label>
                                 <a class=" listbox btn btn-info btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="fakultet0" name="fakultet0" value="S" />
+    <input type="hidden" class="btn-select-input" id="fakultet0" name="fakultet0" value="<?php echo $dozvoljeniFakulteti[0]; ?>" />
     <span class="btn-select-value">Select an Item</span>
     <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
     <ul class="selectLista">
-        <li class="selected listItem">S</li>
-        <li class="listItem">ETF</li>
-        <li class="listItem">Medicina</li>
-        <li class="listItem">Farmacija</li>
-        <li class="listItem">PPF</li>
+        <li class="selected listItem"><?php echo $dozvoljeniFakulteti[0]; ?></li>
+        <?php
+            for($i=1; $i < count($dozvoljeniFakulteti); $i++)
+                echo '<li class="listItem">' . $dozvoljeniFakulteti[$i] .'</li>';
+        ?>
     </ul>
 </a>
                                   <p class="error" id="errorFakultet0"></p>

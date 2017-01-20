@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.png"/>
+
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <script src="bootstrap/js/bootstrap.min.js"></script>

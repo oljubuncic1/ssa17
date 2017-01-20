@@ -107,21 +107,57 @@ $(document).on('click', function (e) {
 
      $(document).ready(function(){
       var i=1;
+      // niz svih fakulteta
+      var sviFaxovi = ['Akademija likovnih umjetnosti',
+'Akademija scenskih umjetnosti',
+'American University in BiH',
+'Arhitektonski fakultet',
+'Ekonomski fakultet',
+'Elektrotehnički fakultet',
+'Fakultet islamskih nauka',
+'Fakultet političkih nauka',
+'Fakultet sporta i tjelesnog odgoja',
+'Fakultet za kriminalistiku, kriminologiju i sigurnosne studije',
+'Fakultet za saobraćaj i komunikacije',
+'Fakultet za upravu',
+'Fakultet zdravstvenih studija',
+'Farmaceutski fakultet',
+'Filozofski fakultet',
+'Građevinski fakultet',
+'International Burch University',
+'International University of Sarajevo',
+'Katolički bogoslovni fakultet',
+'Mašinski fakultet',
+'Medicinski fakultet',
+'Muzička akademija',
+'Pedagoški fakultet',
+'Poljoprivredno-prehrambeni fakultet',
+'Pravni fakultet',
+'Prirodno-matematički fakultet',
+'Sarajevo School of Science and Technology',
+'Stomatološki fakultet sa klinikama',
+'Šumarski fakultet',
+'Veterinarski fakultet'];
+
+    var j;
+    var t = '';
+    for(j=1; j < sviFaxovi.length; j++)
+        t += '<li class="listItem">' + sviFaxovi[j] + '</li>';
+
+
+
      $("#add_row").click(function(){
               $('#addr'+i).html('<div class="form-group col-xs-12 col-md-9">\
                             <label for="fakultet">\
                                 Fakultet*</label>\
                                 <a class=" listbox btn btn-info btn-select btn-select-light">\
-    <input type="hidden" class="btn-select-input" id="fakultet' + i +'" name="fakultet' + i + '" value="S" />\
-    <span class="btn-select-value">S</span>\
+    <input type="hidden" class="btn-select-input" id="fakultet' + i +'" name="fakultet' + i + '" value="Akademija likovnih umjetnosti" />\
+    <span class="btn-select-value">Akademija likovnih umjetnosti</span>\
     <span class="btn-select-arrow glyphicon glyphicon-chevron-down"></span>\
     <ul class="selectLista">\
-        <li class="selected listItem">S</li>\
-        <li class="listItem">ETF</li>\
-        <li class="listItem">Medicina</li>\
-        <li class="listItem">Farmacija</li>\
-        <li class="listItem">PPF</li>\
-    </ul>\
+        <li class="selected listItem">Akademija likovnih umjetnosti</li>' + t +
+        
+    '</ul>\
 </a>\
                                   <p class="error errorFakultet' + i +'"></p>\
                         </div>\
