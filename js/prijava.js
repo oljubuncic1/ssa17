@@ -265,9 +265,22 @@ $('.listItem').on('click', function(){
     //korak1
 
     //ime
+    var regexIme = /^[a-z ,.'-]+$/i;
     if($('#ime').val() == '')
     {
         $('#errorIme').html('Molimo unesite Vaše ime.');
+        $('#ime').addClass('tbError');
+        valid1 = false;
+    }
+    else if($('#ime').val().length > 30)
+    {
+        $('#errorIme').html('Molimo unesite maksimalno 30 karaktera.');
+        $('#ime').addClass('tbError');
+        valid1 = false;
+    }
+    else if(!regexIme.test($('#ime').val()))
+    {
+        $('#errorIme').html('Molimo unesite validno ime.');
         $('#ime').addClass('tbError');
         valid1 = false;
     }
@@ -284,6 +297,18 @@ $('.listItem').on('click', function(){
         $('#prezime').addClass('tbError');
         valid1 = false;
     }
+    else if($('#prezime').val().length > 30)
+    {
+        $('#errorPrezime').html('Molimo unesite maksimalno 30 karaktera.');
+        $('#prezime').addClass('tbError');
+        valid1 = false;
+    }
+    else if(!regexIme.test($('#prezime').val()))
+    {
+        $('#errorPrezime').html('Molimo unesite validno prezime.');
+        $('#prezime').addClass('tbError');
+        valid1 = false;
+    }
     else
     {   
         $('#errorPrezime').html('');
@@ -291,9 +316,16 @@ $('.listItem').on('click', function(){
     }
 
     //datum
+    var regexDatum = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
     if($('#datum').val() == '')
     {
         $('#errorDatum').html('Molimo unesite Vaš datum rođenja.');
+        $('#datum').addClass('tbError');
+        valid1 = false;
+    }
+    else if(!regexDatum.test($('#datum').val()))
+    {
+        $('#errorDatum').html('Molimo unesite validan datum.');
         $('#datum').addClass('tbError');
         valid1 = false;
     }
@@ -329,6 +361,12 @@ $('.listItem').on('click', function(){
     if($('#telefon').val() == '')
     {
         $('#errorTelefon').html('Molimo unesite Vaš broj telefona.');
+        $('#telefon').addClass('tbError');
+        valid1 = false;
+    }
+    else if($('#telefon').val().length > 20)
+    {
+        $('#errorTelefon').html('Molimo unesite validan broj telefona.');
         $('#telefon').addClass('tbError');
         valid1 = false;
     }

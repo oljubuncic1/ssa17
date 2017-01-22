@@ -82,7 +82,10 @@
         $email = NULL;
         $majica = NULL;
 
-        if(isset($_POST['ime']) and $_POST['ime'] != '')
+        $regexIme = "/^[a-z ,.'-]+$/i";
+
+
+        if(isset($_POST['ime']) and $_POST['ime'] != '' and preg_match($regexIme, $_POST['ime']) and strlen($_POST['ime']) <= 30)
             $ime = htmlspecialchars($_POST['ime']);
         else
         {
@@ -95,7 +98,7 @@
         
 
 
-        if(isset($_POST['prezime']) and $_POST['prezime'] != '')
+        if(isset($_POST['prezime']) and $_POST['prezime'] != '' and preg_match($regexIme, $_POST['prezime']) and strlen($_POST['prezime']) <= 30)
             $prezime = htmlspecialchars($_POST['prezime']);
          else
         {
@@ -103,7 +106,9 @@
             $message = 'Molimo unesite ispravno sva polja';
         }
 
-        if(isset($_POST['datum']) and $_POST['datum'] != '')
+        $regDatum = "/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/";
+
+        if(isset($_POST['datum']) and $_POST['datum'] != '' and preg_match($regDatum, $_POST['datum']) and strlen($_POST['datum']) <= 15)
             $datum = htmlspecialchars($_POST['datum']);
          else
         {
@@ -111,7 +116,7 @@
             $message = 'Molimo unesite ispravno sva polja';
         }
 
-        if(isset($_POST['telefon']) and $_POST['telefon'] != '')
+        if(isset($_POST['telefon']) and $_POST['telefon'] != '' and strlen($_POST['telefon']) <= 20)
             $telefon = htmlspecialchars($_POST['telefon']);
          else
         {
@@ -529,7 +534,7 @@
                 $eol = PHP_EOL;
 
             $mes = '<html><body>';
-            $mes .= 'Vaša prijava je zabilježena i spremljena u našu bazu podataka. Nakon zatvaranja prijava bit ćete obaviješteni o ishodu.\n\n Sretno!';
+            $mes .= 'Vaša prijava je zabilježena i spremljena u našu bazu podataka. Nakon zatvaranja prijava bit ćete obaviješteni o ishodu.' .$eol . $eol .'Sretno!';
             $mes .= '</body></html>';
 
             $headers = 'From: softskillsacademy.ba <noreply@softskillsacademy.ba> ' . "\r\n" .
@@ -614,32 +619,32 @@
             <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="ime">
                                 Ime*</label>
-                            <input type="text" class="form-control" id="ime" name="ime" />
+                            <input type="text" class="form-control" id="ime" name="ime" maxlength="30"/>
                             <p class="error" id="errorIme"></p>
 
                         </div>
                         <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="prezime">
                                 Prezime*</label>
-                            <input type="text" class="form-control" id="prezime" name="prezime" />
+                            <input type="text" class="form-control" id="prezime" name="prezime" maxlength="30"/>
                             <p class="error" id="errorPrezime"></p>
                         </div>
                          <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="datum">
                                 Datum rođenja*</label>
-                            <input type="text" class="form-control" id="datum" name="datum"  />
+                            <input type="text" class="form-control" id="datum" name="datum"  maxlength="15"/>
                             <p class="error" id="errorDatum"></p>
                         </div>
                           <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="telefon">
                                 Broj telefona*</label>
-                            <input type="text" class="form-control" id="telefon" name="telefon"  />
+                            <input type="text" class="form-control" id="telefon" name="telefon"  maxlength="20"/>
                             <p class="error" id="errorTelefon"></p>
                         </div>
                         <div class="form-group prvaForma col-xs-12 col-md-6">
                             <label for="email">
                                 Email*</label>
-                            <input type="text" class="form-control" id="email" name="email" />
+                            <input type="text" class="form-control" id="email" name="email"/>
 
                             <p class="error" id="errorEmail"></p>
                         </div>   
