@@ -4,6 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <meta property="og:type" content="website">
+      <meta property="og:title" content="Soft Skills Academy Sarajevo '17" />
+      <meta property="og:description" content="Soft Skills Academy Sarajevo - Besplatna trodnevna radionica ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu" />
+      <meta property="og:image" content="img/whiteLogo.png" />
+      <meta property="og:url" content="." />
     <title>Soft Skills Academy Sarajevo '17</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
