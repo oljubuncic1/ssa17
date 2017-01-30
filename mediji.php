@@ -37,7 +37,7 @@
 
 <div class="marginContainer">
     <div class="container-fluid">
-        <p class="sectionHeadline"><b>Generalni web pokrovitelj</b></p>
+        <p class="logoTitle"><b>Generalni web pokrovitelj</b></p>
         <p class="sectionHeadlineBottomRed logosBottomRed"></p>
 
         <div class="row">

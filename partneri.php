@@ -37,7 +37,7 @@
 
 <div class="marginContainer">
     <div class="container-fluid">
-        <p class="sectionHeadline"><b>Generalni godišnji partneri</b></p>
+        <p class="logoTitle"><b>Generalni godišnji partneri</b></p>
         <p class="sectionHeadlineBottomRed logosBottomRed"></p>
 
         <div class="row">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 logoDiv">
-                <a href="http://radiosarajevo.ba"><img alt="Microsoft" class="img-responsive logoImg" src="img/partneri/microsoft.png"></img></a>
+                <a href="http://radiosarajevo.ba"><img alt="Microsoft" class="img-responsive logoImg mic" src="img/partneri/microsoft.png"></img></a>
             </div>
 
             <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 logoDiv">
