@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+.logosBottomRed
+{
+	margin-bottom: 80px;
+}
+
+.logoDiv
+{
+	margin-bottom: 50px;
+}
+
+.logoImg
+{
+
+	margin: 0 auto !important;
+
+}
+
+.logoTitle
+{
+	background-color: #1aa79e;
+	color: white !important;
+	text-align: center;
+	height: 45px !important;
+	
+}
