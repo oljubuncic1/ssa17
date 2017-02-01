@@ -10,22 +10,21 @@
     <div class="row">
         <?php
 
-        $novosti = query("SELECT * FROM `novost`");
+        $novosti = query("SELECT * FROM `novost` GROUP BY `id` ORDER BY `datum_objave` DESC LIMIT ?", 4);
 
         
         foreach($novosti as $novost){
-            //print_r ($novost);
-            //print $novost["datum_objave"];//2017-02-01 03:30:27
+            //2017-02-01 03:30:27
             //Prvo pravim datetime objekat iz stringa vrijeme iz baze
             $date = DateTime::createFromFormat("Y-m-d H:i:s",$novost["datum_objave"]);
             //Zatim stvaram objekat mjeseca kako bi izvukao skraceno ime mjeseca tipa feb, dec itd
             $monthObject   = DateTime::createFromFormat('!m', intval($date->format("m")));
-            $monthName = $monthObject->format('M'); // March
+            $monthName = $monthObject->format('M'); // Mar,Dec etc for full month name F
 
-            $article = "<div class='col-md-6'>
+            $article = "<div class='col-md-6 novostiDiv' id='".$novost["id"]."'>
              <div class='mainNewsDiv'>
                     <div>
-                        <img class='img-responsive newsImg' src='img/proba.jpg' />
+                        <img class='img-responsive newsImg' src='".$novost["slika"]."' />
                     </div>
                     <div class='newsMainDate'>
                         <p class='newsDayMargin'>".$date->format("d").".</p>
@@ -47,10 +46,6 @@
     </div>
     <script>
         $(function() {
-            var btn = document.getElementById('myBtn');
-            btn.addEventListener('click', function() {
-                document.location.href = 'sveNovosti.php';
-            });
 
             $(window).resize(function() {
                 responsiveDateDiv();
@@ -69,6 +64,12 @@
                 }
             };
             responsiveDateDiv();
+
+            $(".novostiDiv").on('click',function(event){
+                console.log(event);     
+       
+                $.redirect('viseONovosti.php', {'novostId': $(this).attr('id'), 'arg2': 'value2'});
+            });
         });
     </script>
 </section>
