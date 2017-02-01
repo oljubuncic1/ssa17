@@ -2,9 +2,7 @@
     // Sll require statements
     require("php/dzej_config.php");
     require("partials/header.html");
-    require("partials/mainNavbar.html");
-    require('partials/title.html');
-    require('partials/secondNavbar.html');
+    require("partials/mainNavbar2.html");
 
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "POST")

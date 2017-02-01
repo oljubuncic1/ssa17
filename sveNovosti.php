@@ -2,9 +2,7 @@
     // Sll require statements
     require("php/dzej_config.php");
     require("partials/header.html");
-    require("partials/mainNavbar.html");
-    require('partials/title.html');
-    require('partials/secondNavbar.html');
+    require('partials/mainNavbar2.html');
 ?>
 
 <section class="container-fluid marginContainer novosti-cont">
