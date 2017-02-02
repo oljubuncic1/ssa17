@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <head>
 	<meta charset="utf-8">
   
@@ -6,13 +10,11 @@
 
 <?php
 	include("php/config.php");
-   session_start();
-   $user = "";
-   $pass = "";
-   $errMessage = "";
    
    
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
+   
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['loginSubmit'])) {
       // username and password sent from form 
       
 
@@ -22,7 +24,7 @@
       $pass = mysqli_real_escape_string($db,htmlspecialchars($_POST['password'])); 
 
    		
-   		$query = "SELECT username, password FROM admin WHERE username=? AND password=?";
+   		$query = "SELECT username, tip_admina_id FROM admin WHERE username=? AND password=?";
    		$stmt = $db->stmt_init();
    		if(!$stmt->prepare($query))
 		{
@@ -47,11 +49,13 @@
 
     			
 		         $_SESSION['username'] = $user;
+             $_SESSION['role'] = $col2;
 		         $errMessage = "";
 		         
 		         
 		      }else {
 		         $errMessage = "Pogrešni pristupni podaci";
+             
 		      }
 
     		}
@@ -62,9 +66,25 @@
       
        
    }
+   else if($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['logoutSubmit']))
+   {
+      // logout
 
-	if(isset($_SESSION['username']))
-		include("php/adminPanel.php");
+      if(session_destroy()) 
+        header("Location: admin.php");
+   
+   }
+  
+
+	if(isset($_SESSION['username']) and isset($_SESSION['role']))
+  {
+
+    if($_SESSION['role'] == 1)
+    {
+     // general admin
+		include("php/adminPrijave.php");
+    }
+  }
 	else
 		include("php/login.php");
 

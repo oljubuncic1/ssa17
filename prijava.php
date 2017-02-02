@@ -454,6 +454,7 @@
 
             {
 
+                // VAZNO!! zamijenjeni su datum i telefon greskom
                 $stmt->bind_param("ssssss", $ime, $prezime, $datum, $telefon, $email, $majica);
                 $stmt->execute();
                 $participant_id = $db->insert_id;
