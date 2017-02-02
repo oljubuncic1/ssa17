@@ -58,6 +58,19 @@ html {
     max-height: 40%;
 }
 
+.newsImgOne{
+    width:100%;
+}
+
+.mainNewsDivOne {
+    position: relative;
+    background-color: white;
+    border-radius: none;
+    box-shadow: 0px 5px 5px grey;
+    padding: 0px 0px 30px 0px;
+    margin: 50px 20px;
+}
+
 .newsMainDate {
     text-transform: uppercase;
     position: absolute;
@@ -69,6 +82,21 @@ html {
     text-align: center;
     padding: 2px;
     top: 62%;
+    left: 40px;
+    font-family: 'Merriweather', serif;
+}
+
+.newsMainDateOne {
+    text-transform: uppercase;
+    position: absolute;
+    background-color: #1aa79e;
+    font-size: 30px;
+    width: 120px;
+    height: 120px;
+    color: white;
+    text-align: center;
+    padding: 2px;
+    top: 75%;
     left: 40px;
     font-family: 'Merriweather', serif;
 }
@@ -91,11 +119,27 @@ html {
     padding-top: 20px;
 }
 
+.newsArticleHeaderOne {
+    font-family: 'Merriweather', serif;
+    font-size: 34px;
+    color: #333131;
+    padding-left: 170px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+
 .newsArticleText {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     color: grey;
     padding-left: 5%;
+}
+
+.newsArticleTextOne {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    color: grey;
+    padding-left: 60px;
 }
 
 .newsMoreDiv {
@@ -202,12 +246,29 @@ html {
         top: 45%;
         left: 20px;
     }
+    .newsMainDateOne {
+        font-size: 20px;
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+        top: 10%;
+        left: 20px;
+    }
     .newsArticleHeader {
         font-size: 16px;
         margin-top: 35px;
         padding: 5px;
     }
+    .newsArticleHeaderOne {
+        font-size: 16px;
+        margin-top: 35px;
+        padding: 5px;
+    }
     .newsArticleText {
+        font-size: 14px;
+        padding: 5px;
+    }
+    .newsArticleTextOne {
         font-size: 14px;
         padding: 5px;
     }
