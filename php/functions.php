@@ -68,6 +68,7 @@
             {
                 // connect to database
                 $handle = new PDO("mysql:dbname=" . DATABASE . ";host=" . SERVER, USERNAME, PASSWORD);
+                $handle->exec("set names utf8");
 
                 // ensure that PDO::prepare returns false when passed invalid SQL
                 $handle->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); 
