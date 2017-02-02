@@ -18,7 +18,7 @@
             $monthObject   = DateTime::createFromFormat('!m', intval($date->format("m")));
             $monthName = $monthObject->format('M'); // Mar,Dec etc for full month name F
 
-            $article = " <div class='row'>
+            $article = " <div class='row' style='margin:0px;'>
             <div class='col-md-12'>
                 <div class='mainNewsDivOne'>
                         <div>

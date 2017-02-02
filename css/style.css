@@ -68,7 +68,7 @@ html {
     border-radius: none;
     box-shadow: 0px 5px 5px grey;
     padding: 0px 0px 30px 0px;
-    margin: 50px 20px;
+    margin: 50px 0px;
 }
 
 .newsMainDate {
@@ -121,7 +121,7 @@ html {
 
 .newsArticleHeaderOne {
     font-family: 'Merriweather', serif;
-    font-size: 34px;
+    font-size: 28px;
     color: #333131;
     padding-left: 170px;
     padding-right: 10px;
@@ -137,8 +137,8 @@ html {
 
 .newsArticleTextOne {
     font-family: 'Open Sans', sans-serif;
-    font-size: 24px;
-    color: grey;
+    font-size: 20px;
+    color: black;
     padding-left: 60px;
 }
 
