@@ -23,10 +23,25 @@ else if($_SESSION['role'] != 1) // general admin
 
     if($_SERVER["REQUEST_METHOD"] == "GET")
     {
+
+        echo '<a href="../admin.php"><-- Sve prijave</a><br><br>';
+
+
     	$participantId = htmlspecialchars($_GET['id']);
     	include("./config.php");
 
-    	$query = "SELECT * FROM participant WHERE id=?";
+    	$query = "SELECT p.ime, p.prezime, p.broj_telefona, p.datum_rodjenja, p.email, p.velicina_majice,
+                         pr.motivaciono_pismo, pr.ss_iskustvo, pr.seminari_iskustvo, pr.nvo_iskustvo, pr.napomene, pr.ranije_ucesce, 
+                         pr.radno_iskustvo, pr.trenutno_zaposlenje, 
+                         pj.razumijevanje, pj.govor,
+                         j.naziv,
+                         pf.odsjek, pf.godina_studija,
+                         k.naziv, 
+                         f.naziv
+         FROM participant p, prijava pr, jezik j, fakultet f, participant_has_jezik pj, participant_has_fakultet pf, kakostesaznali k
+           WHERE p.id = pr.participant_id AND j.id = pj.jezik_id AND pj.participant_id = p.id AND f.id = pf.fakultet_id 
+           AND pf.participant_id = p.id AND k.id = pr.kako_id AND p.id=?";
+
    		$stmt = $db->stmt_init();
    		if(!$stmt->prepare($query))
 		{
@@ -39,12 +54,16 @@ else if($_SESSION['role'] != 1) // general admin
 			$stmt->bind_param("i", $participantId);
 			$stmt->execute();
 
-        	$stmt->bind_result($id1, $ime, $prezime, $tel, $dat, $email, $majica);
+        	$stmt->bind_result($ime, $prezime, $tel, $dat, $email, $majica, 
+                $mot, $ss, $semin, $nvo, $nap, $ranije, $radno, $trenutno, $raz, $gov,
+                $jezik, $odsjek, $godina, $kakoNaziv, $nazivFaksa);
         	
-        	echo '<h2>Osnovni podaci</h2>';
-        	echo '<br><br>';
+        	
 
         	while ($stmt->fetch()) {
+                // osnovni podaci
+                echo '<h2>Osnovni podaci</h2>';
+                echo '<br><br>';
         		echo $ime . ' ' . $prezime;
                 echo '<br>';
                 echo '<b>Datum rođenja: </b>' . $tel;
@@ -61,204 +80,64 @@ else if($_SESSION['role'] != 1) // general admin
                 echo '<br>';
                 echo '--------------------------------------------------------------';
                 echo '<br><br>';
-    		}
 
-    	}
+                // obrazovanje
 
-
-
-
-    		$query = "SELECT fakultet_id, odsjek, godina_studija FROM participant_has_fakultet WHERE participant_id=?";
-   		$stmt = $db->stmt_init();
-   		if(!$stmt->prepare($query))
-		{
-   			print "Failed to prepare statement\n";
-		}
-		else
-
-		{
-
-			$stmt->bind_param("i", $participantId);
-			$stmt->execute();
-
-        	$stmt->bind_result($idFaksa, $odsjek, $godina);
-        	
-        	echo '<h2>Podaci o obrazovanju</h2>';
-        	echo '<br><br>';
-
-
-        	while ($stmt->fetch()) {
-        		$idFaksa1 = $idFaksa;
-        		$odjsek1 = $odsjek;
-        		$godina1 = $godina;
-
-        	}
-
-        }
-        	
-        		$query = "SELECT naziv FROM fakultet WHERE id=?";
-   		$stmt = $db->stmt_init();
-   		if(!$stmt->prepare($query))
-		{
-   			print "Failed to prepare statement\n";
-		}
-		else
-
-		{
-
-			$stmt->bind_param("i", $idFaksa);
-			$stmt->execute();
-
-        	$stmt->bind_result($nazivFaksa);
-        	
-        	echo '<h3>Podaci o fakultetu</h3>';
-
-        	while ($stmt->fetch()) {
-        		
-                echo '<b>Fakultet: </b>' . $nazivFaksa;
+                echo '<h2>Podaci o obrazovanju</h2>';
+                echo '<br><br>';
+                echo '<h3>Podaci o fakultetu</h3>';
+                 echo '<b>Fakultet: </b>' . $nazivFaksa;
                 echo '<br>';
                 echo '<b>Odsjek: </b>' . $odsjek;
                 echo '<br>';
                 echo '<b>Godina studija: </b>' . $godina;
                 echo '<br>';
                 echo '<br>';
-                
-    		}
-
-        		
-    		}
-
-    		// engleski
-
-    		echo '<h3>Engleski jezik</h3>';
-
-    		$query = "SELECT razumijevanje, govor FROM participant_has_jezik WHERE participant_id=?";
-   		$stmt = $db->stmt_init();
-   		if(!$stmt->prepare($query))
-		{
-   			print "Failed to prepare statement\n";
-		}
-		else
-
-		{
-
-			$stmt->bind_param("i", $participantId);
-			$stmt->execute();
-
-        	$stmt->bind_result($raz, $gov);
-        	
-        	
-
-        	while ($stmt->fetch()) {
-        		
+                echo '<h3>' . $jezik . '</h3>';
                 echo '<b>Razumijevanje: </b>' . $raz;
                 echo '<br>';
                 echo '<b>Govor: </b>' . $gov;
                 echo '<br><br><br>';
                 echo '--------------------------------------------------------------';
                 echo '<br><br>';
-                
-                
-    		}
 
-        		
-    		}
+                // motivaciono
 
-    		// ostalo
-
-    		echo '<h2>Motivaciono pismo</h2>';
-
-    		$query = "SELECT motivaciono_pismo, ss_iskustvo, seminari_iskustvo, nvo_iskustvo, napomene, ranije_ucesce, radno_iskustvo, trenutno_zaposlenje, kako_id FROM prijava WHERE participant_id=?";
-   		$stmt = $db->stmt_init();
-   		if(!$stmt->prepare($query))
-		{
-   			print "Failed to prepare statement\n";
-		}
-		else
-
-		{
-
-			$stmt->bind_param("i", $participantId);
-			$stmt->execute();
-
-        	$stmt->bind_result($mot, $ss, $semin, $nvo, $nap, $ranije, $radno, $trenutno, $kako);
-        	
-        	
-
-        	while ($stmt->fetch()) {
-        		
+                echo '<h2>Motivaciono pismo</h2>';
                 echo '<p>' . $mot . '</p>';
                 echo '--------------------------------------------------------------';
                 echo '<br><br>';
 
+                // prethodno iskustvo
+
                 echo '<h2>Prethodno iskustvo</h2>';
-                $ss1 = $ss;
-                $semin1 = $semin;
-                $nvo1 = $nvo;
-                $nap1 = $nap;
-                $ranije1 = $ranije;
-                $radno1 = $radno;
-                $trenutno1 = $trenutno;
-                $kako_id1 = $kako;
-                
-                
-    		}
-
-        		
-    		}
-
-    		$query = "SELECT naziv FROM kakostesaznali WHERE id=?";
-   		$stmt = $db->stmt_init();
-   		if(!$stmt->prepare($query))
-		{
-   			print "Failed to prepare statement\n";
-		}
-		else
-
-		{
-
-			$stmt->bind_param("i", $kako_id1);
-			$stmt->execute();
-
-        	$stmt->bind_result($kakoNaziv);
-        	
-        	
-
-        	while ($stmt->fetch()) {
-        		
-               
-        		echo '<b>Ranije učešće na SSA: </b>';
-        		if($ranije1 == 1) echo "DA";
-        		else echo "NE";
+                echo '<b>Ranije učešće na SSA: </b>';
+                if($ranije == 1) echo "DA";
+                else echo "NE";
                 echo '<br>';
-            	echo '<b>Kako ste saznali za SSA: </b>' . $kakoNaziv;
-            	echo '<br>';
-            	echo '<b>Radno iskustvo: </b><p>' . $radno1 . '</p>';
-            	echo '<br>';
-            	echo '<b>Trenunto zaposlenje: </b>';
-        		if($trenutno1 == 1) echo "DA";
-        		else echo "NE";
-        		echo '<br>';
-        		echo '<b>Učešče na soft skills treninzima: </b><p>' . $ss1 . '</p>';
-            	echo '<br>';
-            	echo '<b>Učešće na seminarima: </b><p>' . $semin1 . '</p>';
-            	echo '<br>';
-            	echo '<b>Iskustvo u NVO: </b><p>' . $nvo1 . '</p>';
-            	echo '--------------------------------------------------------------';
+                echo '<b>Kako ste saznali za SSA: </b>' . $kakoNaziv;
+                echo '<br>';
+                echo '<b>Radno iskustvo: </b><p>' . $radno . '</p>';
+                echo '<br>';
+                echo '<b>Trenunto zaposlenje: </b>';
+                if($trenutno == 1) echo "DA";
+                else echo "NE";
+                echo '<br>';
+                echo '<b>Učešče na soft skills treninzima: </b><p>' . $ss . '</p>';
+                echo '<br>';
+                echo '<b>Učešće na seminarima: </b><p>' . $semin . '</p>';
+                echo '<br>';
+                echo '<b>Iskustvo u NVO: </b><p>' . $nvo . '</p>';
+                echo '--------------------------------------------------------------';
                 echo '<br><br>';
 
+                // dodatne napomene
+                echo '<h2>Dodatne napomene</h2><p>' . $nap . '</p>';
 
-            	echo '<b>Dodatne napomene: </b><p>' . $nap1 . '</p>';
-            	
-                
-                
+
     		}
 
-        		
-    		}
-
-
-
+    	}
     }
   
 

@@ -42,7 +42,7 @@
 
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
-                <a href="http://radiosarajevo.ba"><img alt="radiosarajevo" class="img-responsive" src="img/mediji/radiosarajevo.png"></img></a>
+                <a href="http://radiosarajevo.ba" target="_blank"><img alt="radiosarajevo" class="img-responsive" src="img/mediji/radiosarajevo.png"></img></a>
             </div>
         </div>
 
