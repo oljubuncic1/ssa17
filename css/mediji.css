@@ -42,7 +42,7 @@
 	
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1100px) {
     
     .logoTitle {
         font-size: 28px;
@@ -51,7 +51,7 @@
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 820px) {
     
     .logoTitle {
         font-size: 23px;
@@ -60,23 +60,43 @@
 
 }
 
+@media screen and (max-width: 650px) {
+    
+    .logoTitle {
+        font-size: 19px;
+        
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    
+    .logoTitle {
+        font-size: 16px;
+        
+    }
+
+}
+
 @media screen and (max-width: 480px) {
     
     .logoTitle {
-        font-size: 20px;
+        font-size: 14px;
         
     }
 
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
     
     .logoTitle {
-        font-size: 17px;
+        font-size: 12px;
         
     }
 
 }
+
+
 
 @media screen and (min-width: 992px) {
 

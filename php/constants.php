@@ -12,7 +12,7 @@
     define("DATABASE", "ssa17");
 
     // your database's password
-    define("PASSWORD", "");
+    define("PASSWORD", "orhan321");
 
     // your database's server
     define("SERVER", "localhost");

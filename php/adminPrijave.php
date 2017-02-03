@@ -49,7 +49,7 @@ else if($_SESSION['role'] != 1) // general admin
             <h1>Pregled prijava</h1>
             <br><br>
             <?php
-                    $query = "SELECT id, ime, prezime, datum_rodjenja, email FROM participant ORDER BY prezime, ime";
+                $query = "SELECT id, ime, prezime, datum_rodjenja, email FROM participant ORDER BY prezime, ime";
         $stmt = $db->stmt_init();
         if(!$stmt->prepare($query))
         {

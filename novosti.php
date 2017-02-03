@@ -41,9 +41,9 @@
         
         ?>
     </div>
-    <div class="container-fluid newsMoreDiv">
+    <!-- <div class="container-fluid newsMoreDiv">
         <p><a href="sveNovosti.php"class="newsMoreText">Više novosti...</a></p>
-    </div>
+    </div> -->
     <script>
         $(function() {
 
