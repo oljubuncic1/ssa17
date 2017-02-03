@@ -1,6 +1,13 @@
 /*    --------------------------------------------------
 	:: Login Section
 	-------------------------------------------------- */
+
+.row
+{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
 #login {
     padding-top: 50px
 }

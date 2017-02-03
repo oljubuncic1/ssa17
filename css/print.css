@@ -1,0 +1,9 @@
+.inv
+{
+	display: none;
+}
+
+.sec
+{
+	page-break-inside: avoid;
+}

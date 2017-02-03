@@ -21,6 +21,7 @@ else if($_SESSION['role'] != 1) // general admin
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/jpg" href="img/favicon.png"/>
 
 
@@ -30,6 +31,7 @@ else if($_SESSION['role'] != 1) // general admin
 <body>
 
     <div class="row">
+        <div class="container-fluid">
         <div class="col-xs-12 col-md-2">
 	<p style="text-align:center">Ulogovani ste kao <b><?php echo $_SESSION['username']; ?></b>.</p>
 
@@ -40,9 +42,12 @@ else if($_SESSION['role'] != 1) // general admin
     </form>
 
 </div>
+
+</div>
 </div>
 
 <div class="row">
+    <div class="container-fluid">
 
         <div class="col-xs-12 col-md-3">
             <br><br>
@@ -81,6 +86,7 @@ else if($_SESSION['role'] != 1) // general admin
 
 
             ?>
+        </div>
         </div>
 
     </div>

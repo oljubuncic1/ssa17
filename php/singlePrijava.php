@@ -6,8 +6,17 @@ session_start();
 
 <head>
 	<meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="../css/print.css" media="print"/>
+
   
 </head>
+
+<html>
+<body>
+
+<div class="row">
+    <div class="container-fluid">
+        <div class="col-xs-12 col-md-6">
 
 <?php
 
@@ -24,7 +33,10 @@ else if($_SESSION['role'] != 1) // general admin
     if($_SERVER["REQUEST_METHOD"] == "GET")
     {
 
-        echo '<a href="../admin.php"><-- Sve prijave</a><br><br>';
+        echo '<a class="inv" href="../admin.php"><-- Sve prijave</a><br><br>';
+        echo '<a  class="inv" href="javascript:window.print()" >
+            Print/Export to PDF
+          </a>';
 
 
     	$participantId = htmlspecialchars($_GET['id']);
@@ -62,6 +74,7 @@ else if($_SESSION['role'] != 1) // general admin
 
         	while ($stmt->fetch()) {
                 // osnovni podaci
+                echo '<div class="sec">';
                 echo '<h2>Osnovni podaci</h2>';
                 echo '<br><br>';
         		echo $ime . ' ' . $prezime;
@@ -80,9 +93,11 @@ else if($_SESSION['role'] != 1) // general admin
                 echo '<br>';
                 echo '--------------------------------------------------------------';
                 echo '<br><br>';
+                echo '</div>';
 
                 // obrazovanje
 
+                echo '<div class="sec">';
                 echo '<h2>Podaci o obrazovanju</h2>';
                 echo '<br><br>';
                 echo '<h3>Podaci o fakultetu</h3>';
@@ -100,16 +115,20 @@ else if($_SESSION['role'] != 1) // general admin
                 echo '<br><br><br>';
                 echo '--------------------------------------------------------------';
                 echo '<br><br>';
+                echo '</div>';
 
                 // motivaciono
 
+                echo '<div class="sec">';
                 echo '<h2>Motivaciono pismo</h2>';
                 echo '<p>' . $mot . '</p>';
                 echo '--------------------------------------------------------------';
                 echo '<br><br>';
+                echo '</div>';
 
                 // prethodno iskustvo
 
+                echo '<div class="sec">';
                 echo '<h2>Prethodno iskustvo</h2>';
                 echo '<b>Ranije učešće na SSA: </b>';
                 if($ranije == 1) echo "DA";
@@ -130,9 +149,13 @@ else if($_SESSION['role'] != 1) // general admin
                 echo '<b>Iskustvo u NVO: </b><p>' . $nvo . '</p>';
                 echo '--------------------------------------------------------------';
                 echo '<br><br>';
+                echo '</div>';
+
 
                 // dodatne napomene
+                echo '<div class="sec">';
                 echo '<h2>Dodatne napomene</h2><p>' . $nap . '</p>';
+                echo '</div>';
 
 
     		}
@@ -142,3 +165,10 @@ else if($_SESSION['role'] != 1) // general admin
   
 
 ?>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
