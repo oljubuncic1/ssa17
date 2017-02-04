@@ -1,6 +1,15 @@
 <?php 
 
 session_start();
+if(!isset($_SESSION['username']) or !isset($_SESSION['role']))
+{
+    header('Location: ../admin.php');
+}
+
+else if($_SESSION['role'] != 1) // general admin
+{
+        header('Location: ../admin.php');
+    }
 
 ?>
 
@@ -20,15 +29,7 @@ session_start();
 
 <?php
 
-if(!isset($_SESSION['username']) or !isset($_SESSION['role']))
-{
-	header('Location: ../admin.php');
-}
 
-else if($_SESSION['role'] != 1) // general admin
-{
-		header('Location: ../admin.php');
-    }
 
     if($_SERVER["REQUEST_METHOD"] == "GET")
     {
