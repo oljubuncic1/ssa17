@@ -86,11 +86,9 @@
         {
             
             // slanje maila
-            $primi = array(
-                'adina.omerovic@softskillsacademy.ba',
-                'emina.sikira@softskillsacademy.ba',
-                'orhan.ljubuncic@softskillsacademy.ba'
-            );
+            $primi = 'info@softskillsacademy.ba';
+                
+            
 
             $subject = '[SSA] Kontakt forma';
             $eol = PHP_EOL;
@@ -108,9 +106,9 @@
             $headers .= "Content-Type: text/html; charset=\"UTF-8\"".$eol;
             $headers .= "Content-Transfer-Encoding: 8bit".$eol.$eol;
 
-            foreach($primi as $to){
-                mail($to, $subject, $message, $headers);
-            }
+            
+                mail($primi, $subject, $message, $headers);
+            
             $confMes = "Hvala što ste nas kontaktirali. Naš tim će nastojati da u što kraćem roku odgovori na vašu poruku.";
         }
         else
