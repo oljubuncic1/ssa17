@@ -1,11 +1,5 @@
 <?php
 session_start();
-?>
-
-
-
-
-<?php
 	include("php/config.php");
    
    
@@ -73,12 +67,9 @@ session_start();
    }
 
    ?>
-
    <head>
   <meta charset="utf-8">
-  
 </head>
-  
   <?php
 
 	if(isset($_SESSION['username']) and isset($_SESSION['role']))
