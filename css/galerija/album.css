@@ -1,0 +1,143 @@
+.header-galerija
+{
+    background: url("../../img/cover/galerije.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:40vh;
+    width:100%;
+    /*opacity: 0.7;*/
+    position: relative;
+    background-color: #D92528;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+
+    border-bottom: 2px solid #C91619;
+}
+
+.header-galerija .text
+{
+ position:absolute;
+ top:50%;
+ /*margin-top:-15px;*/
+ height:70px;
+ line-height: 70px;
+ padding-top: 10px;
+ padding-left:40px;
+ padding-right:40px;
+ left: 5%;
+
+ /*background:#363738;
+ opacity: 1;
+ border-top-right-radius: 100%;
+ border-bottom-right-radius: 3%;*/
+
+ color:white;
+ font-weight: 700;
+ font-size: 30px;
+ z-index: 10;
+}
+
+.header-galerija .shadow
+{
+  position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ background: #5D5D5D;
+ opacity: 0.7;
+ z-index: 5;
+}
+/*
+  SLIDESHOW
+  Sahinovic Tarik
+*/
+
+  #links {
+    margin: 50px;
+    float: none;
+    text-align: center;
+  }
+
+  #links img {
+    height: 180px;
+    width: auto;
+    border-radius: 5px;
+    }
+
+  .slika {
+    display: inline-block;
+    height: 180px;
+    width: 250px;
+    margin: 10px 10px 0px 10px;
+
+  }
+
+  .blueimp-gallery .modal-body {
+    position: relative;
+    text-align: center;
+    padding: 0 0 56.25% 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .blueimp-gallery .modal-footer {
+    margin: 0;
+  }
+  .blueimp-gallery .modal-body img,
+  .blueimp-gallery .modal-body .video-content video,
+  .blueimp-gallery .modal-body .video-content iframe,
+  .blueimp-gallery .modal-body .video-content a {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .blueimp-gallery .modal-body .video-content video {
+    display: none;
+  }
+  .blueimp-gallery .modal-body .video-playing video {
+    display: block;
+  }
+  .blueimp-gallery .modal-body .video-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    left: 100%;
+  }
+  .blueimp-gallery .modal-body .video-playing iframe {
+    left: 0;
+  }
+  .blueimp-gallery .modal-body .video-playing img,
+  .blueimp-gallery .modal-body .video-playing a {
+    display: none;
+  }
+  .blueimp-gallery .modal-body .video-content a {
+    cursor: pointer;
+  }
+  .blueimp-gallery .modal-body .video-content a:after {
+    font-family: "Glyphicons Halflings";
+    -webkit-font-smoothing: antialiased;
+    content: "\e029";
+    font-size: 64px;
+    line-height: 64px;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 50%;
+    margin: -32px 0 0 -32px;
+  }
+  .blueimp-gallery .modal-body .video-loading a {
+    background: url(../img/loading.gif) center no-repeat;
+    background-size: 64px 64px;
+  }
+  .blueimp-gallery .modal-body .video-loading a:after {
+    content: none;
+  }
