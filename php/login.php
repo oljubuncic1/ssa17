@@ -20,8 +20,8 @@
 <section id="login">
     <div class="container">
     	<div class="row">
-    	    <div class="col-xs-12">
-        	    <div class="form-wrap">
+    	    <div class="col-xs-12 col-xs-offset-0 col-md-4 col-md-offset-4">
+        	    <div >
                 <h1>Log in</h1>
                     <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="login-form" autocomplete="off">
                         <div class="form-group">

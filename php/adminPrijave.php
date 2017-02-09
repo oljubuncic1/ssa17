@@ -33,7 +33,7 @@ else if($_SESSION['role'] != 1) // general admin
     <div class="row">
         <div class="container-fluid">
         <div class="col-xs-12 col-md-2">
-	<p style="text-align:center">Ulogovani ste kao <b><?php echo $_SESSION['username']; ?></b>.</p>
+	<p style="text-align:center; margin-top:30px;">Ulogovani ste kao <b><?php echo $_SESSION['username']; ?></b>.</p>
 
 
     <form name="logoutForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -68,6 +68,7 @@ else if($_SESSION['role'] != 1) // general admin
             $rb = 1;
             $stmt->bind_result($idevi, $imena, $prezimena, $telefoni, $emailovi);
             while ($stmt->fetch()) {
+                echo '<div class="sec">';
                 echo $rb . '. ' . '<b>' . $imena . ' ' . $prezimena .'</b>';
                 echo '<br>';
                 echo $telefoni;
@@ -77,7 +78,7 @@ else if($_SESSION['role'] != 1) // general admin
                 echo '<a href="./php/singlePrijava.php?id=' . $idevi . '">Pregled prijave</a>';
                 echo '<br>';
                 echo '<br>';
-                echo '--------------------------------------------------------------';
+                echo '</div>';
                 echo '<br><br>';
                 $rb++;
             }

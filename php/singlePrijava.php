@@ -15,9 +15,13 @@ else if($_SESSION['role'] != 1) // general admin
 
 <head>
 	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/login.css">
+        <link rel="shortcut icon" type="image/jpg" href="../img/favicon.png"/>
     <link type="text/css" rel="stylesheet" href="../css/print.css" media="print"/>
-
-  
 </head>
 
 <html>
@@ -92,7 +96,6 @@ else if($_SESSION['role'] != 1) // general admin
                 
                 echo '<br>';
                 echo '<br>';
-                echo '--------------------------------------------------------------';
                 echo '<br><br>';
                 echo '</div>';
 
@@ -114,7 +117,6 @@ else if($_SESSION['role'] != 1) // general admin
                 echo '<br>';
                 echo '<b>Govor: </b>' . $gov;
                 echo '<br><br><br>';
-                echo '--------------------------------------------------------------';
                 echo '<br><br>';
                 echo '</div>';
 
@@ -122,8 +124,7 @@ else if($_SESSION['role'] != 1) // general admin
 
                 echo '<div class="sec">';
                 echo '<h2>Motivaciono pismo</h2>';
-                echo '<p>' . $mot . '</p>';
-                echo '--------------------------------------------------------------';
+                echo '<p style="text-align:justify;">' . $mot . '</p>';
                 echo '<br><br>';
                 echo '</div>';
 
@@ -148,7 +149,6 @@ else if($_SESSION['role'] != 1) // general admin
                 echo '<b>Učešće na seminarima: </b><p>' . $semin . '</p>';
                 echo '<br>';
                 echo '<b>Iskustvo u NVO: </b><p>' . $nvo . '</p>';
-                echo '--------------------------------------------------------------';
                 echo '<br><br>';
                 echo '</div>';
 

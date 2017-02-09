@@ -8,6 +8,11 @@
     margin-right: 0px !important;
 }
 
+.sec
+{
+    border-bottom: 1px solid black;
+}
+
 #login {
     padding-top: 50px
 }
