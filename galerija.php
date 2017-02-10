@@ -59,7 +59,7 @@
                                 $pictureCount = iterator_count($fi);
                                 if($pictureCount > 0){ ?>
 
-                                  <img src= "./img/galerija/<?php echo "$godine[$i]"?>/cover.jpg" />
+                                  <img src= "./img/galerija/<?php echo "$godine[$i]"?>/thumbs/cover.jpg" />
                                 <!-- Dakle u folder albuma se stavlja slika koja ce predstavljati album na galerije.php
                                       naziv slike je logicno "cover.jpg" -->
                                 <?php } else if($pictureCount == 0) { ?>
