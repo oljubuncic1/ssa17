@@ -45,7 +45,7 @@
 
 <div class="marginContainer">
     <div class="container-fluid">
-    <div class="logoTitle">SSA '<?php echo $coolGodina; ?></div>
+    <div class="logoTitleGallery"><b>SSA '<?php echo $coolGodina; ?></b></div>
         <div id="links">
           <?php
 
