@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="css/galerija/blueimp-gallery.min.css">
     <link rel="stylesheet" href="css/galerija/album.css">
+    <link rel="stylesheet" href="css/mediji.css">
 
     <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
@@ -44,7 +45,7 @@
 
 <div class="marginContainer">
     <div class="container-fluid">
-    <div class="text">SSA '<?php echo $coolGodina; ?></div>
+    <div class="logoTitle">SSA '<?php echo $coolGodina; ?></div>
         <div id="links">
           <?php
 
