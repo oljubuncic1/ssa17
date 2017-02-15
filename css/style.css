@@ -108,6 +108,7 @@ html {
     font-family: 'Merriweather', serif;
 }
 
+
 .newsDayMargin {
     margin-bottom: -10px;
     font-size: 44px;
@@ -303,6 +304,35 @@ html {
         font-size: 50px;
     }
 }
+
+  .carousel-inner > .item > .citat {
+      width: 70%;
+      margin: auto;
+      font-family: 'Merriweather';
+      font-size: 21px;
+      color: #333131;
+      font-style: italic;
+      font-weight: bold;
+      text-align: left;
+  }
+
+  .carousel-inner > .item > .citat > .ime-Osobe {
+      color:#ed1d24;
+      text-align: right;
+  }
+
+
+  
+#myCarousel > .carousel-control{
+    opacity: 0;
+}
+
+/*Boja strelice se ne prikazuje zbog opacity-a parenta, ne znam kako popraviti*/
+  /*#myCarousel > .carousel-control > .glyphicon{
+      position: absolute;
+      z-index: 50;
+      color: #828582;
+}*/
 
 .mainNavbar
 {
