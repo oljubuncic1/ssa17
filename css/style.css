@@ -108,12 +108,7 @@ html {
     font-family: 'Merriweather', serif;
 }
 
-.navbar {
-    position: relative;
-    min-height: 50px;
-    margin-bottom: 0px;
-    border: 1px solid transparent;
-}
+
 .newsDayMargin {
     margin-bottom: -10px;
     font-size: 44px;
