@@ -2,12 +2,13 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta property="og:type" content="website">
       <meta property="og:title" content="Soft Skills Academy Sarajevo '17" />
       <meta property="og:description" content="Soft Skills Academy Sarajevo - Besplatna trodnevna radionica ličnih i profesionalnih vještina za studente svih fakulteta u Sarajevu" />
-      <meta property="og:image" content="img/greenLogo.png" />
+      <meta property="og:image" content="img/greenLogo.jpg" />
       <meta property="og:url" content="." />
 
     <title>Soft Skills Academy Sarajevo '17</title>
@@ -31,7 +32,6 @@
     <script src="js/prijava.js"></script>
     <script src="js/select.js"></script>
      <script src="js/scroll.js"></script>
-
 
 </head>
 
