@@ -1,3 +1,15 @@
+@media only screen and (max-width : 990px){
+	.treningHeadline{
+	text-align:center;
+	}
+	.logoImg{
+		visibility: hidden;
+	}
+	.line{
+		width: 100%!important;
+	}
+}
+
 .treningRow{
 	margin-top: 20px;
 }
@@ -13,11 +25,18 @@
 }
 
 .treningHeadline{
-   
+	font-family: 'Gotham-Bold';
+	color: #6c0f13;
+	text-shadow: 1px 0px 1px #12746e;
+	font-size: 30px;
+	margin-top: 10px;
 }
 
 .treningAbout{
-
+	text-align: justify;
+	font-family: 'Roboto';
+	color: #333131;
+	font-size: 15px;
 }
 
 .imgDescription{
@@ -28,20 +47,44 @@
 	left:50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
+	font-size: 20px;
+	font-family: 'Gotham-light';
+	color: #ffffff;
+	text-shadow: 1px 1px 2px #12746e;
 }
 
 .imgWrap{
 	position: relative;
 	align-self: center!important;
+	z-index: 0;
 	
 }
 
 
 .imgWrap:hover .imgDescription{
 	visibility: visible;
-	opacity: 1;
+	opacity: 1!important;
+	z-index: 100!important;
 }
 
-.imgWrap:hover .treningImg{
-	opacity: 0.4;
+.imgWrap:hover .treningImg{	
+	opacity: 0.6;
+	z-index: -10!important;
+}
+
+
+.line{
+	float: left;	
+	width: 97%;
+	border-top: 1px solid #12746e; 
+	opacity: 0.5;  
+}
+
+.logoImg{
+	position: relative;
+	float: right;
+	margin-top: 3vh;
+	right: 0;
+	transform: translate(-50%, -50%);
+	
 }
