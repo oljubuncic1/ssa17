@@ -324,15 +324,16 @@ html {
 
   
 #myCarousel > .carousel-control{
-    opacity: 0;
+    
+    background:transparent;
 }
 
 /*Boja strelice se ne prikazuje zbog opacity-a parenta, ne znam kako popraviti*/
-  /*#myCarousel > .carousel-control > .glyphicon{
+  #myCarousel > .carousel-control > .glyphicon{
       position: absolute;
       z-index: 50;
-      color: #828582;
-}*/
+      color: #ed1d24;
+}
 
 .mainNavbar
 {
@@ -1040,3 +1041,4 @@ html {
         margin-top: 220px !important;
     }
 }
+
