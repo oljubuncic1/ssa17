@@ -11,7 +11,8 @@
       <div class="modal-body">
         <div id="album-container">
         <?php
-          $godina = isset($_GET['godina']) ? $_GET['godina'] : 2012;
+          $godina = isset($_POST['godina']) ? $_POST['godina'] : 2012;
+          echo "<h3>$godina</h3>";
           $niz2 = new ArrayObject($godine[$godina]);
           $it2 = $niz2->getIterator();
           foreach($it2 as $val){ ?>

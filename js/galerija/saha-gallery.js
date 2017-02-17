@@ -4,8 +4,19 @@ $(window).on("load", function(){
     var modal = $("#myModal");
 
     window.showDays = function(param){
-        $.post('./partials/modalDays.php', {'godina': param});
-        //console.log(godina);
-        modal.modal();
+
+        $.ajax({
+        	//url: './partials/modalDays.php',
+        	type: 'POST',
+        	dataType: 'html',
+        	data: {
+        		'godina': 2013
+        	},
+        	success: function(data){
+        		//console.log(data);
+        		$('#myModal').replaceWith("<h3> TARIK </h3>");
+        		modal.modal();
+        	}
+        });
     }
-})
+});
