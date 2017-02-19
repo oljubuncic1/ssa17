@@ -1020,11 +1020,11 @@ html {
     margin-top: 170px !important;
     padding: 0px !important;
     margin: 0 auto;
-    
+    width: 300px;
     
 }
 
-.prijavaTekst
+.prijavaTekst, .prijavaTekst2
 {
     color: white;
     font-family: 'Gotham-Light';
@@ -1035,10 +1035,85 @@ html {
     
 }
 
+.prijavaTekst2
+{
+    font-size: 18px;
+}
+
+.prijavaSlika
+{
+    padding-bottom: 20px !important;
+}
+
 @media only screen and (max-width: 950px) {
     .prijavaSlika
     {
         margin-top: 220px !important;
     }
+}
+
+@media only screen and (min-width: 1170px) {
+    
+        .prijavaTekst
+        {
+            display: none;
+        }
+
+        .prijavaSlika
+        {
+            margin-top: 120px !important;
+        }
+    }
+
+
+@media only screen and (max-width: 1170px) {
+
+    .timerDiv, .prijavaTekst2
+    {
+        display: none;
+    }
+
+
+
+}
+
+
+
+.timerBroj, .timerDvotacka
+{
+    font-size: 60px;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    line-height: 30px;
+    margin-top: 30px;
+}
+
+.timerBroj
+{
+
+}
+
+.timerTekst
+{
+    font-size: 12px;
+    padding: 0px;
+    font-family: 'Roboto';
+
+}
+
+.timerBroj, .timerDvotacka
+{
+    text-align: center;
+    color: white;
+    font-family: 'Roboto';
+    vertical-align: top;
+
+}
+
+.proba
+{
+    text-align: center;
 }
 

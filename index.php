@@ -1,7 +1,7 @@
 <?php require("partials/header.html");?>
     
     <div id="includeMainNavbar"><?php include 'partials/mainNavbar.html'; ?></div>
-    <div id="includeTitle"><?php include 'partials/title.html'; ?></div>
+    <div id="includeTitle"><?php include 'partials/title.php'; ?></div>
     <div id="includeSecondNavbar"><?php include 'partials/secondNavbar.html'; ?></div>
     <div id="includeNovosti"><?php include 'novosti.php'; ?></div>
     <div id="includeONama"><?php include 'partials/oNama.html'; ?></div>
