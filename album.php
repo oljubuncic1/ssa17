@@ -1,8 +1,8 @@
 <?php
-	$godina = $_GET['godina'];
-	$coolGodina = substr($godina, 2);
+	$godina = htmlspecialchars($_GET['godina']);
+    $dan = htmlspecialchars($_GET['dan']);
 
-	$folder_path = 'img/galerija/'.$godina.'/';
+	$folder_path = 'img/galerija/'.$godina . '/' . $dan .'/';
 
 	$num_files = glob($folder_path . "*.{JPG,jpg,png}", GLOB_BRACE);
 
@@ -45,7 +45,7 @@
 
 <div class="marginContainer">
     <div class="container-fluid">
-    <div class="logoTitleGallery"><b>SSA '<?php echo $coolGodina; ?></b></div>
+    <div class="logoTitleGallery"><b><?php echo $dan . '. DAN'; ?></b></div>
         <div id="links">
           <?php
 
