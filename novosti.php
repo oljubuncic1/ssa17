@@ -66,7 +66,8 @@
             responsiveDateDiv();
 
             $(".novostiDiv").on('click',function(event){
-                console.log(event);     
+                console.log(event); 
+                    
        
                 $.redirect('viseONovosti.php', {'novostId': $(this).attr('id'), 'arg2': 'value2'});
             });
