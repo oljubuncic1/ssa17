@@ -76,7 +76,10 @@
             }
 
         }
-    }?>
+    }
+        sort($dani);
+
+    ?>
 
     <div id="album-container">
         <?php for($i = 0; $i < $counter; $i++) { ?>

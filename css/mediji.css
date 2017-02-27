@@ -9,7 +9,7 @@
 
 .logosBottomRed
 {
-	margin-bottom: 80px;
+	margin-bottom: 90px;
 }
 
 .logoDiv
@@ -28,6 +28,12 @@
 
 }
 
+.firstTitle
+{
+        margin-top: 100px;
+
+}
+
 .logoTitle, .logoTitleGallery
 {
 	background-color: #1aa79e;
@@ -37,7 +43,6 @@
 	font-family: 'Gotham-Bold', sans-serif;
     font-size: 35px;
     text-transform: uppercase;
-    margin-top: 100px;
     line-height: 50px !important;
 	
 }
@@ -106,4 +111,47 @@
 	margin-left: 20px !important;
 }
 
+.swityRow
+{
+    margin-left: 10vh;
 }
+
+.karuzoRow
+{
+    margin-bottom: 80px;
+}
+
+.sens
+{
+    margin-top: 15px;
+}
+
+.nes
+{
+    margin-top: 10px;
+}
+
+
+}
+
+
+@media screen and (max-width: 990px) {
+.karuzo
+{
+    margin-top: 50px;
+    margin-bottom: 110px;
+}
+
+.swity
+{
+    margin-bottom: 120px;
+}
+
+}
+
+
+
+
+
+
+
