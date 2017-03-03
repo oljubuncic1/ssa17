@@ -158,7 +158,7 @@
                 <label class="gr">adina.omerovic@softskillsacademy.ba<br>
                 <abbr title="Phone">
                     </abbr>
-                +387 62 984 391</label>
+                +387 62 984 319</label>
             </address>
 
         </div>
