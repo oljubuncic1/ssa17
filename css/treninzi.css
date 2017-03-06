@@ -90,3 +90,53 @@
 	transform: translate(-50%, -50%);
 	
 }
+
+
+@media only screen and (min-width : 992px){
+
+	.denis
+	{
+		margin-top: 90px;
+	}
+
+	.meetings
+	{
+		margin-top: 30px;
+	}
+
+	.time
+	{
+		margin-top: 20px;
+	}
+
+	.dragutin
+	{
+		margin-top: 30px;
+	}
+
+	.leader
+	{
+		margin-top: 20px;
+	}
+
+	.stress
+	{
+		margin-top: 110px;
+	}
+
+	.milos
+	{
+		margin-top: 110px;
+	}
+
+	.mot
+	{
+		margin-top: 100px;
+	}
+
+	.semir
+	{
+		margin-top: 150px;
+	}
+
+}

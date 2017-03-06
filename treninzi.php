@@ -21,7 +21,7 @@
 	<div class="row treningRow">
 		<div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/meetings.png">
+				<img class="img-responsive treningImg meetings" src="img/tt/meetings.png">
 			</div>
 		</div>
 		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 treningText">
@@ -37,7 +37,7 @@ Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, poneka
 
 		<div  class="col-lg-4 col-md-4  col-xs-12 col-md-push-8">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/denis.png">
+				<img class="img-responsive treningImg denis" src="img/tt/denis.png">
 			</div>
 		</div>
 
@@ -61,7 +61,7 @@ Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, poneka
 	<div class="row treningRow">
 		<div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/time.png">
+				<img class="img-responsive treningImg time" src="img/tt/time.png">
 			</div>
 		</div>
 		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 treningText">
@@ -76,7 +76,7 @@ Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, poneka
 
 		<div  class="col-lg-4 col-md-4  col-xs-12 col-md-push-8">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/dragutin.png">
+				<img class="img-responsive treningImg dragutin" src="img/tt/dragutin.png">
 			</div>
 		</div>
 
@@ -101,7 +101,7 @@ Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, poneka
 	<div class="row treningRow">
 		<div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/leadership.png">
+				<img class="img-responsive treningImg leader" src="img/tt/leadership.png">
 			</div>
 		</div>
 		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 treningText">
@@ -126,7 +126,7 @@ Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, poneka
 
 		<div  class="col-lg-4 col-md-4  col-xs-12 col-md-push-8">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/luka.png">
+				<img class="img-responsive treningImg luka" src="img/tt/luka.png">
 			</div>
 		</div>
 
@@ -148,7 +148,7 @@ Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, poneka
 	<div class="row treningRow">
 		<div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/stress.png">
+				<img class="img-responsive treningImg stress" src="img/tt/stress.png">
 			</div>
 		</div>
 		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 treningText">
@@ -172,7 +172,7 @@ Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, poneka
 
 		<div  class="col-lg-4 col-md-4  col-xs-12 col-md-push-8">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/milos.png">
+				<img class="img-responsive treningImg milos" src="img/tt/milos.png">
 			</div>
 		</div>
 
@@ -199,7 +199,7 @@ Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, poneka
 	<div class="row treningRow">
 		<div  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/motivation.png">
+				<img class="img-responsive treningImg mot" src="img/tt/motivation.png">
 			</div>
 		</div>
 		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 treningText">
@@ -225,7 +225,7 @@ Doista, atmosfera na sastanku (i sama priprema: urediti salu za sastanke, poneka
 
 		<div  class="col-lg-4 col-md-4  col-xs-12 col-md-push-8">
 			<div class="imgWrap">
-				<img class="img-responsive treningImg" src="img/tt/semir.png">
+				<img class="img-responsive treningImg semir" src="img/tt/semir.png">
 			</div>
 		</div>
 
