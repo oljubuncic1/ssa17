@@ -30,6 +30,10 @@ html {
     margin: 10px 5% 10px 5%;
 }
 
+.logoContainer {
+    margin: 10px 15% 10px 15%;
+}
+
 .sectionHeadline {
     font-family: 'Gotham-Bold', sans-serif;
     font-size: 35px;
@@ -317,7 +321,7 @@ html {
   }
 
   .carousel-inner > .item > .citat > .ime-Osobe {
-      color:#ed1d24;
+      color:#d52027;
       text-align: right;
   }
 
@@ -332,7 +336,7 @@ html {
   #myCarousel > .carousel-control > .glyphicon{
       position: absolute;
       z-index: 50;
-      color: #ed1d24;
+      color: #d52027;
 }
 
 .mainNavbar
@@ -1146,6 +1150,11 @@ html {
     margin-top: -45px;
 }
 
+}
+
+.raspImage
+{
+    margin-top: 100px;
 }
 
 
