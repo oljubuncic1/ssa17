@@ -9,5 +9,6 @@
     <div id="includeOProjektu"><?php include 'partials/oProjektu.html'; ?></div>
     <div id="includeDrugiONama"><?php include 'partials/drugiONama.html'; ?></div>
     <div id="includeRaspored"><?php include 'partials/raspored.html'; ?></div>
+    <div id="includeParticipanti"><?php include 'partials/participanti.html'; ?></div>
     <div id="includeFooter"><?php include 'partials/footer.html'; ?></div>
 

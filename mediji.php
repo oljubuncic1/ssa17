@@ -72,7 +72,7 @@
             </div>
 
             <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 logoDiv">
-                <a href="https://studomat.ba/" target="_blank"><img alt="Studomat" class="img-responsive logoImg studomat" src="img/mediji/stepup/studomat.png"></img></a>
+                <a href="https://studomat.ba/" target="_blank"><img alt="Studomat" class="img-responsive logoImg studomat" src="img/mediji/stepup/Studomat.png"></img></a>
             </div>
 
             <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 logoDiv">
