@@ -61,7 +61,7 @@
 
 <div class="marginContainer">
     <div class="container-fluid">
-    <div class="logoTitleGallery"><b>SSA '<?php echo $coolGodina; ?></b></div>
+    <div class="logoTitleGallery firstTitle"><b>SSA '<?php echo $coolGodina; ?></b></div>
 
      <?php
     $dani = array();

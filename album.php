@@ -45,7 +45,7 @@
 
 <div class="marginContainer">
     <div class="container-fluid">
-    <div class="logoTitleGallery"><b><?php echo $dan . '. DAN'; ?></b></div>
+    <div class="logoTitleGallery firstTitle"><b><?php echo $dan . '. DAN'; ?></b></div>
         <div id="links">
           <?php
 
